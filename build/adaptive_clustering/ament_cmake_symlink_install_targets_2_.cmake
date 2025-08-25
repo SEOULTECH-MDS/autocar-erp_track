@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/ysl/autocar_track/build/adaptive_clustering/rosidl_generator_py/adaptive_clustering/adaptive_clustering_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" "TARGETS" "adaptive_clustering__rosidl_typesupport_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/adaptive_clustering")

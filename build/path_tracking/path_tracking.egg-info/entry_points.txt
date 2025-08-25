@@ -1,2 +1,0 @@
-[console_scripts]
-mpc = path_tracking.mpc_acados_sp:main

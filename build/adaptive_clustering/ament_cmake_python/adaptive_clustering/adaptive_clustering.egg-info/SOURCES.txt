@@ -1,8 +1,0 @@
-setup.py
-adaptive_clustering/__init__.py
-adaptive_clustering.egg-info/PKG-INFO
-adaptive_clustering.egg-info/SOURCES.txt
-adaptive_clustering.egg-info/dependency_links.txt
-adaptive_clustering.egg-info/top_level.txt
-adaptive_clustering/msg/__init__.py
-adaptive_clustering/msg/_cluster_array.py
