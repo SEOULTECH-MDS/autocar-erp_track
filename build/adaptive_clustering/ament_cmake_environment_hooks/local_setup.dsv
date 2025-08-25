@@ -1,4 +1,0 @@
-source;share/adaptive_clustering/environment/ament_prefix_path.sh
-source;share/adaptive_clustering/environment/library_path.sh
-source;share/adaptive_clustering/environment/path.sh
-source;share/adaptive_clustering/environment/pythonpath.sh

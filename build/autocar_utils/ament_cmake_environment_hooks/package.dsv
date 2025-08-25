@@ -1,4 +1,0 @@
-source;share/autocar_utils/local_setup.bash
-source;share/autocar_utils/local_setup.dsv
-source;share/autocar_utils/local_setup.sh
-source;share/autocar_utils/local_setup.zsh
