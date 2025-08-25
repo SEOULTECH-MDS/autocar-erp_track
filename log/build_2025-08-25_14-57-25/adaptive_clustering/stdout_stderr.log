@@ -1,0 +1,143 @@
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_generator_c[0m
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering_ground_removed_node[0m
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering_node[0m
+[  2%] Built target adaptive_clustering__cpp
+[ 10%] Built target adaptive_clustering__rosidl_generator_c
+[ 10%] Built target ament_cmake_python_symlink_adaptive_clustering
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_fastrtps_cpp[0m
+[ 15%] Built target adaptive_clustering_ground_removed_node
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_introspection_cpp[0m
+[ 21%] Built target adaptive_clustering_node
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_cpp[0m
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_c[0m
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_fastrtps_c[0m
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_introspection_c[0m
+[ 28%] Built target adaptive_clustering__rosidl_typesupport_introspection_cpp
+[ 36%] Built target adaptive_clustering__rosidl_typesupport_fastrtps_cpp
+[ 44%] Built target adaptive_clustering__rosidl_typesupport_introspection_c
+[ 52%] Built target adaptive_clustering__rosidl_typesupport_cpp
+[ 60%] Built target adaptive_clustering__rosidl_typesupport_c
+[ 68%] Built target adaptive_clustering__rosidl_typesupport_fastrtps_c
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering_lib[0m
+[ 68%] Built target adaptive_clustering
+[ 76%] Built target adaptive_clustering_lib
+[ 78%] Built target adaptive_clustering__py
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_generator_py[0m
+[ 84%] Built target adaptive_clustering__rosidl_generator_py
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_introspection_c__pyext[0m
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_fastrtps_c__pyext[0m
+[35m[1mConsolidate compiler generated dependencies of target adaptive_clustering__rosidl_typesupport_c__pyext[0m
+[ 89%] Built target adaptive_clustering__rosidl_typesupport_fastrtps_c__pyext
+[ 94%] Built target adaptive_clustering__rosidl_typesupport_introspection_c__pyext
+[100%] Built target adaptive_clustering__rosidl_typesupport_c__pyext
+running egg_info
+writing adaptive_clustering.egg-info/PKG-INFO
+writing dependency_links to adaptive_clustering.egg-info/dependency_links.txt
+writing top-level names to adaptive_clustering.egg-info/top_level.txt
+ERROR setuptools_scm._file_finders.git listing git files failed - pretending there aren't any
+reading manifest file 'adaptive_clustering.egg-info/SOURCES.txt'
+writing manifest file 'adaptive_clustering.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_adaptive_clustering_egg
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/ament_index/resource_index/rosidl_interfaces/adaptive_clustering
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/cluster_array.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__functions.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__struct.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__type_support.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/rosidl_generator_c__visibility_control.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/environment/library_path.sh
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/environment/library_path.dsv
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/cluster_array.hpp
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__builder.hpp
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__struct.hpp
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__traits.hpp
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__type_support.hpp
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__rosidl_typesupport_introspection_c.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/include/adaptive_clustering/adaptive_clustering/msg/detail/cluster_array__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/environment/pythonpath.sh
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/environment/pythonpath.dsv
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering-0.0.1-py3.10.egg-info/PKG-INFO
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering-0.0.1-py3.10.egg-info/SOURCES.txt
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering-0.0.1-py3.10.egg-info/dependency_links.txt
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering-0.0.1-py3.10.egg-info/top_level.txt
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/__init__.py
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/_adaptive_clustering_s.ep.rosidl_typesupport_c.c
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/_adaptive_clustering_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/_adaptive_clustering_s.ep.rosidl_typesupport_introspection_c.c
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/adaptive_clustering_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/adaptive_clustering_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/adaptive_clustering_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/libadaptive_clustering__rosidl_generator_py.so
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/msg/__init__.py
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/msg/_cluster_array.py
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/msg/_cluster_array_s.c
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/adaptive_clustering_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/adaptive_clustering_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/adaptive_clustering_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/msg/ClusterArray.idl
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/msg/ClusterArray.msg
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/lib/adaptive_clustering/adaptive_clustering_node
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/lib/adaptive_clustering/adaptive_clustering_ground_removed_node
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering_lib.so
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/bin/adaptive_clustering_node
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/bin/adaptive_clustering_ground_removed_node
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering//adaptive_clustering.launch.py
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering//ground_removal_clustering.launch.py
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering//msg/ClusterArray.msg
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/ament_index/resource_index/package_run_dependencies/adaptive_clustering
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/ament_index/resource_index/parent_prefix_path/adaptive_clustering
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/environment/path.sh
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/environment/path.dsv
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/local_setup.bash
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/local_setup.sh
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/local_setup.zsh
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/local_setup.dsv
+-- Symlinking: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.dsv
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/ament_index/resource_index/packages/adaptive_clustering
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/ament_index/resource_index/rclcpp_components/adaptive_clustering
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/rosidl_cmake-extras.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clusteringConfig.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clusteringConfig-version.cmake
+-- Up-to-date symlink: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.xml
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering__rosidl_generator_c.so
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering__rosidl_typesupport_fastrtps_cpp.so
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering__rosidl_typesupport_introspection_c.so
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering__rosidl_typesupport_c.so
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering__rosidl_typesupport_introspection_cpp.so
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering__rosidl_typesupport_cpp.so
+Listing '/home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering'...
+Listing '/home/ysl/autocar_track/install/adaptive_clustering/local/lib/python3.10/dist-packages/adaptive_clustering/msg'...
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/lib/libadaptive_clustering__rosidl_generator_py.so
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_generator_cExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_generator_cExport-noconfig.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_typesupport_fastrtps_cExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_generator_cppExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clustering__rosidl_typesupport_introspection_cExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clustering__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clustering__rosidl_typesupport_cExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clustering__rosidl_typesupport_cExport-noconfig.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clustering__rosidl_typesupport_introspection_cppExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clustering__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clustering__rosidl_typesupport_cppExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/adaptive_clustering__rosidl_typesupport_cppExport-noconfig.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_generator_pyExport.cmake
+-- Up-to-date: /home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/cmake/export_adaptive_clustering__rosidl_generator_pyExport-noconfig.cmake

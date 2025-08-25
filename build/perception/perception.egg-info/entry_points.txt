@@ -1,0 +1,18 @@
+[console_scripts]
+bbox_tracker = perception.tracker.src.bbox_tracker:main
+camera_pub = perception.lanenet.camera_pub:main
+camera_sign = perception.yolov11.camera_sign:main
+camera_traffic = perception.yolov11.camera_traffic:main
+combined_camera = perception.yolov11.obstacle_camera.combined_camera:main
+lanenet = perception.lanenet.lanenet:main
+left_camera = perception.yolov11.obstacle_camera.left_camera:main
+object_tracker3D = perception.tracker.src.object_tracker3D:main
+obstacle = perception.yolov11.obstacle:main
+right_camera = perception.yolov11.obstacle_camera.right_camera:main
+rubber_visualizer = perception.rubber_visualizer.src.rubber_visualizer:main
+sensor_fusion_object = perception.sensor_fusion.src.object.sensor_fusion:main
+sensor_fusion_sign = perception.sensor_fusion.src.sign.sensor_fusion:main
+sign = perception.yolov11.sign:main
+stopline_camera = perception.stopline_camera:main
+stopline_detection = perception.stopline_detection:main
+trafficlight = perception.yolov11.trafficlight:main

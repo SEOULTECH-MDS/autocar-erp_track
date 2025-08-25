@@ -1,0 +1,68 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclpy: 3.3.16 (/opt/ros/humble/share/rclpy/cmake)
+-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ysl/autocar_track/build/autocar_utils
+Built target ament_cmake_python_symlink_autocar_utils
+running egg_info
+creating autocar_utils.egg-info
+writing autocar_utils.egg-info/PKG-INFO
+writing dependency_links to autocar_utils.egg-info/dependency_links.txt
+writing top-level names to autocar_utils.egg-info/top_level.txt
+writing manifest file 'autocar_utils.egg-info/SOURCES.txt'
+ERROR setuptools_scm._file_finders.git listing git files failed - pretending there aren't any
+reading manifest file 'autocar_utils.egg-info/SOURCES.txt'
+writing manifest file 'autocar_utils.egg-info/SOURCES.txt'
+Built target ament_cmake_python_build_autocar_utils_egg
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/environment/pythonpath.sh
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/environment/pythonpath.dsv
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils-0.0.0-py3.10.egg-info/PKG-INFO
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils-0.0.0-py3.10.egg-info/top_level.txt
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils/__init__.py
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils/autocar_util.py
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils/time_plot.py
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/lib/autocar_utils/time_plot.py
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/lib/autocar_utils/autocar_util.py
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/ament_index/resource_index/package_run_dependencies/autocar_utils
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/ament_index/resource_index/parent_prefix_path/autocar_utils
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/environment/ament_prefix_path.sh
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/environment/ament_prefix_path.dsv
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/environment/path.sh
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/environment/path.dsv
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/local_setup.bash
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/local_setup.sh
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/local_setup.zsh
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/local_setup.dsv
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.dsv
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/ament_index/resource_index/packages/autocar_utils
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/cmake/autocar_utilsConfig.cmake
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/cmake/autocar_utilsConfig-version.cmake
+-- Symlinking: /home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.xml
+Listing '/home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils'...
+Compiling '/home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils/__init__.py'...
+Compiling '/home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils/autocar_util.py'...
+Compiling '/home/ysl/autocar_track/install/autocar_utils/local/lib/python3.10/dist-packages/autocar_utils/time_plot.py'...

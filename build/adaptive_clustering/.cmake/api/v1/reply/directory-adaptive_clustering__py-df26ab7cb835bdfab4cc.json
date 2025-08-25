@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "adaptive_clustering__py",
+		"source" : "/home/ysl/autocar_track/build/adaptive_clustering/adaptive_clustering__py"
+	}
+}

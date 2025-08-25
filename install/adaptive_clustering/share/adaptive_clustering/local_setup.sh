@@ -1,0 +1,1 @@
+/home/ysl/autocar_track/build/adaptive_clustering/ament_cmake_environment_hooks/local_setup.sh

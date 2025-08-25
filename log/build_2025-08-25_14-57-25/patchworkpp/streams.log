@@ -1,0 +1,42 @@
+[0.030s] Invoking command in '/home/ysl/autocar_track/build/patchworkpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/patchworkpp -- -j20 -l20
+[0.227s] [35m[1mConsolidate compiler generated dependencies of target patchworkpp_comp_node[0m
+[0.228s] [35m[1mConsolidate compiler generated dependencies of target demo[0m
+[0.228s] [ 33%] Built target patchworkpp_comp_node
+[0.228s] [35m[1mConsolidate compiler generated dependencies of target patchworkpp[0m
+[0.228s] [ 66%] Built target demo
+[0.228s] [100%] Built target patchworkpp
+[0.409s] Invoked command in '/home/ysl/autocar_track/build/patchworkpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/patchworkpp -- -j20 -l20
+[0.420s] Invoking command in '/home/ysl/autocar_track/build/patchworkpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/patchworkpp
+[0.427s] -- Install configuration: "Release"
+[0.428s] -- Execute custom install script
+[0.428s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/lib/patchworkpp/patchworkpp_comp_node
+[0.428s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/lib/libpatchworkpp.so
+[0.429s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/lib/patchworkpp/demo
+[0.429s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/include/patchworkpp/patchworkpp.hpp
+[0.429s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/include/patchworkpp/utils.hpp
+[0.429s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/launch/composable.launch.py
+[0.429s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/launch/demo.launch.py
+[0.429s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/launch/rviz1.launch.py
+[0.429s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/config/params_ros2.yaml
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/rviz/demo.rviz
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/rviz/patchworkpp_viz.rviz
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/rviz/rviz1.rviz
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/ament_index/resource_index/package_run_dependencies/patchworkpp
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/ament_index/resource_index/parent_prefix_path/patchworkpp
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/environment/ament_prefix_path.sh
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/environment/ament_prefix_path.dsv
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/environment/path.sh
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/environment/path.dsv
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/local_setup.bash
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/local_setup.sh
+[0.430s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/local_setup.zsh
+[0.431s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/local_setup.dsv
+[0.431s] -- Symlinking: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.dsv
+[0.440s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/ament_index/resource_index/packages/patchworkpp
+[0.440s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/ament_index/resource_index/rclcpp_components/patchworkpp
+[0.440s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.440s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.440s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/cmake/patchworkppConfig.cmake
+[0.441s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/cmake/patchworkppConfig-version.cmake
+[0.441s] -- Up-to-date symlink: /home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.xml
+[0.443s] Invoked command in '/home/ysl/autocar_track/build/patchworkpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/patchworkpp

@@ -1,0 +1,34 @@
+[0.826s] Invoking command in '/home/ysl/autocar_track/build/perception': PYTHONPATH=/home/ysl/autocar_track/build/perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ysl/autocar_track/install/perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ysl/autocar_track/build/perception/build --no-deps symlink_data
+[1.047s] running develop
+[1.193s] running egg_info
+[1.205s] writing perception.egg-info/PKG-INFO
+[1.205s] writing dependency_links to perception.egg-info/dependency_links.txt
+[1.205s] writing entry points to perception.egg-info/entry_points.txt
+[1.205s] writing requirements to perception.egg-info/requires.txt
+[1.205s] writing top-level names to perception.egg-info/top_level.txt
+[1.251s] ERROR setuptools_scm._file_finders.git listing git files failed - pretending there aren't any
+[1.323s] reading manifest file 'perception.egg-info/SOURCES.txt'
+[1.326s] writing manifest file 'perception.egg-info/SOURCES.txt'
+[1.360s] running build_ext
+[1.360s] Creating /home/ysl/autocar_track/install/perception/lib/python3.10/site-packages/perception.egg-link (link to .)
+[1.361s] Installing bbox_tracker script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing camera_pub script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing camera_sign script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing camera_traffic script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing combined_camera script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing lanenet script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing left_camera script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing object_tracker3D script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing obstacle script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing right_camera script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing rubber_visualizer script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing sensor_fusion_object script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing sensor_fusion_sign script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.361s] Installing sign script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.362s] Installing stopline_camera script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.362s] Installing stopline_detection script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.362s] Installing trafficlight script to /home/ysl/autocar_track/install/perception/lib/perception
+[1.362s] 
+[1.362s] Installed /home/ysl/autocar_track/build/perception
+[1.362s] running symlink_data
+[1.389s] Invoked command in '/home/ysl/autocar_track/build/perception' returned '0': PYTHONPATH=/home/ysl/autocar_track/build/perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ysl/autocar_track/install/perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ysl/autocar_track/build/perception/build --no-deps symlink_data
