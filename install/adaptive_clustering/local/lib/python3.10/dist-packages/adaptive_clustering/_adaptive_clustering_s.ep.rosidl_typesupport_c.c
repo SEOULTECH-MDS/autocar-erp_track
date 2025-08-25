@@ -1,1 +1,0 @@
-/home/ysl/autocar_track/build/adaptive_clustering/rosidl_generator_py/adaptive_clustering/_adaptive_clustering_s.ep.rosidl_typesupport_c.c

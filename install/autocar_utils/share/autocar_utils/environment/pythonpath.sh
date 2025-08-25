@@ -1,1 +1,0 @@
-/home/ysl/autocar_track/build/autocar_utils/ament_cmake_environment_hooks/pythonpath.sh

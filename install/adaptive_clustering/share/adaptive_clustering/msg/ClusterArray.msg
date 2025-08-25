@@ -1,1 +1,0 @@
-/home/ysl/autocar_track/src/perception/adaptive_clustering/msg/ClusterArray.msg

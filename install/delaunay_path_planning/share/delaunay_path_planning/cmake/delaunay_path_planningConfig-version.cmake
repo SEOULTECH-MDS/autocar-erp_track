@@ -1,1 +1,0 @@
-/home/ysl/autocar_track/build/delaunay_path_planning/ament_cmake_core/delaunay_path_planningConfig-version.cmake
