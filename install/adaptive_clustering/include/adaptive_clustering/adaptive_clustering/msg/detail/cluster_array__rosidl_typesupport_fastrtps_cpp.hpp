@@ -1,1 +1,0 @@
-/home/ysl/autocar_track/build/adaptive_clustering/rosidl_typesupport_fastrtps_cpp/adaptive_clustering/msg/detail/cluster_array__rosidl_typesupport_fastrtps_cpp.hpp

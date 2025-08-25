@@ -1,1 +1,0 @@
-/home/ysl/autocar_track/build/adaptive_clustering/rosidl_generator_c/adaptive_clustering/msg/cluster_array.h
