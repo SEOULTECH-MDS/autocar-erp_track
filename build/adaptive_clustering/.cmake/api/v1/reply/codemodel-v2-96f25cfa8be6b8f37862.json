@@ -1,0 +1,260 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-d504784e622d2a78e9e9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				},
+				{
+					"build" : "adaptive_clustering__py",
+					"jsonFile" : "directory-adaptive_clustering__py-df26ab7cb835bdfab4cc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/ysl/autocar_track/build/adaptive_clustering/adaptive_clustering__py",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "adaptive_clustering",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering-998e5efe49c0498e3805.json",
+					"name" : "adaptive_clustering",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__cpp-56ed1d66aa769bea664f.json",
+					"name" : "adaptive_clustering__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "adaptive_clustering__py::@49dccec1a7a22f35706d",
+					"jsonFile" : "target-adaptive_clustering__py-1ebc58b0d2b04ec464e7.json",
+					"name" : "adaptive_clustering__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_generator_c-37414b89c1d80db666aa.json",
+					"name" : "adaptive_clustering__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_generator_py-042b7556335e71f720f4.json",
+					"name" : "adaptive_clustering__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_c-157797f00a61df011af2.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_c__pyext-92d75cd3e35e3030a4db.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_cpp-04d3aa9143a7852dfb58.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_fastrtps_c-45581b790ad30ab5b543.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_fastrtps_c__pyext-0720c6dc55286e5a6953.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_fastrtps_cpp-33e7b0ea0b50be050494.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_introspection_c-f8fba9d15351ed5d8230.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_introspection_c__pyext-4a35d472d2ef3720f3fd.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering__rosidl_typesupport_introspection_cpp-e6f1d35be7a30d67dce8.json",
+					"name" : "adaptive_clustering__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering_ground_removed_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering_ground_removed_node-3f7d7c9b4b4483edb3ee.json",
+					"name" : "adaptive_clustering_ground_removed_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering_lib-d95371a7cf605aea0707.json",
+					"name" : "adaptive_clustering_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering_node-70a682496db0f5d9c994.json",
+					"name" : "adaptive_clustering_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "adaptive_clustering_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-adaptive_clustering_uninstall-0613771edecff5d020a8.json",
+					"name" : "adaptive_clustering_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_adaptive_clustering_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_adaptive_clustering_egg-544d87bb497edc7a89b2.json",
+					"name" : "ament_cmake_python_build_adaptive_clustering_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_adaptive_clustering::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_adaptive_clustering-4ca8ed0134edb55c68e2.json",
+					"name" : "ament_cmake_python_symlink_adaptive_clustering",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-218639ff4cb3c1806a82.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ysl/autocar_track/build/adaptive_clustering",
+		"source" : "/home/ysl/autocar_track/src/perception/adaptive_clustering"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

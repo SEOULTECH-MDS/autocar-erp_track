@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+path_tracking/__init__.py
+path_tracking/acados_setting_sp.py
+path_tracking/bicycle_model_sp.py
+path_tracking/mpc_acados_sp.py
+path_tracking.egg-info/PKG-INFO
+path_tracking.egg-info/SOURCES.txt
+path_tracking.egg-info/dependency_links.txt
+path_tracking.egg-info/entry_points.txt
+path_tracking.egg-info/requires.txt
+path_tracking.egg-info/top_level.txt
+path_tracking.egg-info/zip-safe
+resource/path_tracking

@@ -1,0 +1,4 @@
+source;share/delaunay_path_planning/local_setup.bash
+source;share/delaunay_path_planning/local_setup.dsv
+source;share/delaunay_path_planning/local_setup.sh
+source;share/delaunay_path_planning/local_setup.zsh

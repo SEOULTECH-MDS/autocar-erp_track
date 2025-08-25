@@ -1,0 +1,52 @@
+running develop
+running egg_info
+creating perception.egg-info
+writing perception.egg-info/PKG-INFO
+writing dependency_links to perception.egg-info/dependency_links.txt
+writing entry points to perception.egg-info/entry_points.txt
+writing requirements to perception.egg-info/requires.txt
+writing top-level names to perception.egg-info/top_level.txt
+writing manifest file 'perception.egg-info/SOURCES.txt'
+ERROR setuptools_scm._file_finders.git listing git files failed - pretending there aren't any
+reading manifest file 'perception.egg-info/SOURCES.txt'
+writing manifest file 'perception.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ysl/autocar_track/install/perception/lib/python3.10/site-packages/perception.egg-link (link to .)
+Installing bbox_tracker script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing camera_pub script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing camera_sign script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing camera_traffic script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing combined_camera script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing lanenet script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing left_camera script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing object_tracker3D script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing obstacle script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing right_camera script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing rubber_visualizer script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing sensor_fusion_object script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing sensor_fusion_sign script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing sign script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing stopline_camera script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing stopline_detection script to /home/ysl/autocar_track/install/perception/lib/perception
+Installing trafficlight script to /home/ysl/autocar_track/install/perception/lib/perception
+
+Installed /home/ysl/autocar_track/build/perception
+running symlink_data
+creating /home/ysl/autocar_track/install/perception/share/ament_index/resource_index/packages
+symbolically linking /home/ysl/autocar_track/build/perception/resource/perception -> /home/ysl/autocar_track/install/perception/share/ament_index/resource_index/packages
+symbolically linking /home/ysl/autocar_track/build/perception/package.xml -> /home/ysl/autocar_track/install/perception/share/perception
+creating /home/ysl/autocar_track/install/perception/share/perception/models
+symbolically linking /home/ysl/autocar_track/build/perception/perception/lanenet/models/culane_18.pth -> /home/ysl/autocar_track/install/perception/share/perception/models
+creating /home/ysl/autocar_track/install/perception/share/perception/yolov11/weights
+symbolically linking /home/ysl/autocar_track/build/perception/perception/yolov11/weights/rubber_new.pt -> /home/ysl/autocar_track/install/perception/share/perception/yolov11/weights
+symbolically linking /home/ysl/autocar_track/build/perception/perception/yolov11/weights/best_신호등.pt -> /home/ysl/autocar_track/install/perception/share/perception/yolov11/weights
+symbolically linking /home/ysl/autocar_track/build/perception/perception/yolov11/weights/delivery_t.pt -> /home/ysl/autocar_track/install/perception/share/perception/yolov11/weights
+symbolically linking /home/ysl/autocar_track/build/perception/perception/yolov11/weights/best_라바콘.pt -> /home/ysl/autocar_track/install/perception/share/perception/yolov11/weights
+symbolically linking /home/ysl/autocar_track/build/perception/perception/yolov11/weights/tf_best.pt -> /home/ysl/autocar_track/install/perception/share/perception/yolov11/weights
+symbolically linking /home/ysl/autocar_track/build/perception/perception/yolov11/weights/best_표지판.pt -> /home/ysl/autocar_track/install/perception/share/perception/yolov11/weights
+creating /home/ysl/autocar_track/install/perception/share/perception/launch
+symbolically linking /home/ysl/autocar_track/build/perception/launch/sign.launch.py -> /home/ysl/autocar_track/install/perception/share/perception/launch
+symbolically linking /home/ysl/autocar_track/build/perception/launch/lanenet.launch.py -> /home/ysl/autocar_track/install/perception/share/perception/launch
+symbolically linking /home/ysl/autocar_track/build/perception/launch/obstacle.launch.py -> /home/ysl/autocar_track/install/perception/share/perception/launch
+symbolically linking /home/ysl/autocar_track/build/perception/launch/stopline.launch.py -> /home/ysl/autocar_track/install/perception/share/perception/launch
+symbolically linking /home/ysl/autocar_track/build/perception/launch/traffic_light.launch.py -> /home/ysl/autocar_track/install/perception/share/perception/launch

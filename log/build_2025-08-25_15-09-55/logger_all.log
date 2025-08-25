@@ -1,0 +1,580 @@
+[0.060s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.060s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f8a4f4c1810>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f8a4f442ec0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f8a4f442ec0>>, mixin_verb=('build',))
+[0.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.082s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ysl/autocar_track'
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.082s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.083s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.090s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ignore'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ignore_ament_install'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['colcon_pkg']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'colcon_pkg'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['colcon_meta']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'colcon_meta'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['ros']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ros'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['cmake', 'python']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'cmake'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'python'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['python_setup_py']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'python_setup_py'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extension 'ignore'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extension 'ignore_ament_install'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extensions ['colcon_pkg']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extension 'colcon_pkg'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extensions ['colcon_meta']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extension 'colcon_meta'
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extensions ['ros']
+[0.091s] Level 1:colcon.colcon_core.package_identification:_identify(src/control/erp_control) by extension 'ros'
+[0.093s] DEBUG:colcon.colcon_core.package_identification:Package 'src/control/erp_control' with type 'ros.ament_cmake' and name 'erp_control'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extensions ['ignore', 'ignore_ament_install']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extension 'ignore'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extension 'ignore_ament_install'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extensions ['colcon_pkg']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extension 'colcon_pkg'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extensions ['colcon_meta']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extension 'colcon_meta'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extensions ['ros']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extension 'ros'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extensions ['cmake', 'python']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extension 'cmake'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extension 'python'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extensions ['python_setup_py']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning) by extension 'python_setup_py'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extensions ['ignore', 'ignore_ament_install']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extension 'ignore'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extension 'ignore_ament_install'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extensions ['colcon_pkg']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extension 'colcon_pkg'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extensions ['colcon_meta']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extension 'colcon_meta'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extensions ['ros']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_planning/delaunay_path_planning) by extension 'ros'
+[0.094s] DEBUG:colcon.colcon_core.package_identification:Package 'src/path_planning/delaunay_path_planning' with type 'ros.ament_cmake' and name 'delaunay_path_planning'
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extensions ['ignore', 'ignore_ament_install']
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extension 'ignore'
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extension 'ignore_ament_install'
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extensions ['colcon_pkg']
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extension 'colcon_pkg'
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extensions ['colcon_meta']
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extension 'colcon_meta'
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extensions ['ros']
+[0.094s] Level 1:colcon.colcon_core.package_identification:_identify(src/path_tracking) by extension 'ros'
+[0.095s] DEBUG:colcon.colcon_core.package_identification:Package 'src/path_tracking' with type 'ros.ament_python' and name 'path_tracking'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['ignore', 'ignore_ament_install']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'ignore'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'ignore_ament_install'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['colcon_pkg']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'colcon_pkg'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['colcon_meta']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'colcon_meta'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['ros']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'ros'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['cmake', 'python']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'cmake'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'python'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extensions ['python_setup_py']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception) by extension 'python_setup_py'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extensions ['ignore', 'ignore_ament_install']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extension 'ignore'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extension 'ignore_ament_install'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extensions ['colcon_pkg']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extension 'colcon_pkg'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extensions ['colcon_meta']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extension 'colcon_meta'
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extensions ['ros']
+[0.095s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/adaptive_clustering) by extension 'ros'
+[0.096s] DEBUG:colcon.colcon_core.package_identification:Package 'src/perception/adaptive_clustering' with type 'ros.ament_cmake' and name 'adaptive_clustering'
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extensions ['ignore', 'ignore_ament_install']
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extension 'ignore'
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extension 'ignore_ament_install'
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extensions ['colcon_pkg']
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extension 'colcon_pkg'
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extensions ['colcon_meta']
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extension 'colcon_meta'
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extensions ['ros']
+[0.096s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/patchwork-plusplus-ros) by extension 'ros'
+[0.097s] DEBUG:colcon.colcon_core.package_identification:Package 'src/perception/patchwork-plusplus-ros' with type 'ros.ament_cmake' and name 'patchworkpp'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extensions ['ignore', 'ignore_ament_install']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extension 'ignore'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extension 'ignore_ament_install'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extensions ['colcon_pkg']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extension 'colcon_pkg'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extensions ['colcon_meta']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extension 'colcon_meta'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extensions ['ros']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/perception/perception_core) by extension 'ros'
+[0.097s] DEBUG:colcon.colcon_core.package_identification:Package 'src/perception/perception_core' with type 'ros.ament_python' and name 'perception'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['ignore', 'ignore_ament_install']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ignore'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ignore_ament_install'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['colcon_pkg']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'colcon_pkg'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['colcon_meta']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'colcon_meta'
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['ros']
+[0.097s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ros'
+[0.097s] DEBUG:colcon.colcon_core.package_identification:Package 'src/utils' with type 'ros.ament_cmake' and name 'autocar_utils'
+[0.097s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.098s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.098s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.098s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.098s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.110s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 19 installed packages in /home/ysl/sensor/install
+[0.111s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 7 installed packages in /home/ysl/autocar_track/install
+[0.112s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 450 installed packages in /opt/ros/humble
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'cmake_target' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'cmake_clean_cache' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'cmake_clean_first' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'cmake_force_configure' from command line to 'False'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'ament_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'catkin_cmake_args' from command line to 'None'
+[0.142s] Level 5:colcon.colcon_core.verb:set package 'adaptive_clustering' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.143s] DEBUG:colcon.colcon_core.verb:Building package 'adaptive_clustering' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ysl/autocar_track/build/adaptive_clustering', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ysl/autocar_track/install/adaptive_clustering', 'merge_install': False, 'path': '/home/ysl/autocar_track/src/perception/adaptive_clustering', 'symlink_install': True, 'test_result_base': None}
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'cmake_target' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'cmake_clean_cache' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'cmake_clean_first' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'cmake_force_configure' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'ament_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'catkin_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'autocar_utils' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.143s] DEBUG:colcon.colcon_core.verb:Building package 'autocar_utils' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ysl/autocar_track/build/autocar_utils', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ysl/autocar_track/install/autocar_utils', 'merge_install': False, 'path': '/home/ysl/autocar_track/src/utils', 'symlink_install': True, 'test_result_base': None}
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'cmake_target' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'cmake_clean_cache' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'cmake_clean_first' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'cmake_force_configure' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'ament_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'catkin_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'delaunay_path_planning' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.143s] DEBUG:colcon.colcon_core.verb:Building package 'delaunay_path_planning' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ysl/autocar_track/build/delaunay_path_planning', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ysl/autocar_track/install/delaunay_path_planning', 'merge_install': False, 'path': '/home/ysl/autocar_track/src/path_planning/delaunay_path_planning', 'symlink_install': True, 'test_result_base': None}
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'cmake_target' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'erp_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.143s] DEBUG:colcon.colcon_core.verb:Building package 'erp_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ysl/autocar_track/build/erp_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ysl/autocar_track/install/erp_control', 'merge_install': False, 'path': '/home/ysl/autocar_track/src/control/erp_control', 'symlink_install': True, 'test_result_base': None}
+[0.143s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'cmake_target' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'cmake_clean_cache' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'cmake_clean_first' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'cmake_force_configure' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'ament_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'catkin_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'patchworkpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.144s] DEBUG:colcon.colcon_core.verb:Building package 'patchworkpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ysl/autocar_track/build/patchworkpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ysl/autocar_track/install/patchworkpp', 'merge_install': False, 'path': '/home/ysl/autocar_track/src/perception/patchwork-plusplus-ros', 'symlink_install': True, 'test_result_base': None}
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'cmake_target' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'cmake_clean_cache' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'cmake_clean_first' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'cmake_force_configure' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'ament_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'catkin_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'path_tracking' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.144s] DEBUG:colcon.colcon_core.verb:Building package 'path_tracking' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ysl/autocar_track/build/path_tracking', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ysl/autocar_track/install/path_tracking', 'merge_install': False, 'path': '/home/ysl/autocar_track/src/path_tracking', 'symlink_install': True, 'test_result_base': None}
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_target' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_clean_cache' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_clean_first' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'cmake_force_configure' from command line to 'False'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'ament_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'catkin_cmake_args' from command line to 'None'
+[0.144s] Level 5:colcon.colcon_core.verb:set package 'perception' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.144s] DEBUG:colcon.colcon_core.verb:Building package 'perception' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ysl/autocar_track/build/perception', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ysl/autocar_track/install/perception', 'merge_install': False, 'path': '/home/ysl/autocar_track/src/perception/perception_core', 'symlink_install': True, 'test_result_base': None}
+[0.144s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.145s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.145s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ysl/autocar_track/src/perception/adaptive_clustering' with build type 'ament_cmake'
+[0.145s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ysl/autocar_track/src/perception/adaptive_clustering'
+[0.146s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.147s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.147s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.149s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ysl/autocar_track/src/utils' with build type 'ament_cmake'
+[0.149s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ysl/autocar_track/src/utils'
+[0.150s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.150s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.152s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ysl/autocar_track/src/path_planning/delaunay_path_planning' with build type 'ament_cmake'
+[0.152s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ysl/autocar_track/src/path_planning/delaunay_path_planning'
+[0.152s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.152s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.155s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ysl/autocar_track/src/control/erp_control' with build type 'ament_cmake'
+[0.155s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ysl/autocar_track/src/control/erp_control'
+[0.155s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.155s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.158s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ysl/autocar_track/src/perception/patchwork-plusplus-ros' with build type 'ament_cmake'
+[0.158s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ysl/autocar_track/src/perception/patchwork-plusplus-ros'
+[0.159s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.159s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.162s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ysl/autocar_track/src/path_tracking' with build type 'ament_python'
+[0.162s] Level 1:colcon.colcon_core.shell:create_environment_hook('path_tracking', 'ament_prefix_path')
+[0.162s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/hook/ament_prefix_path.ps1'
+[0.163s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/hook/ament_prefix_path.dsv'
+[0.163s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/hook/ament_prefix_path.sh'
+[0.163s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.163s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.166s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ysl/autocar_track/src/perception/perception_core' with build type 'ament_python'
+[0.166s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception', 'ament_prefix_path')
+[0.166s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/perception/share/perception/hook/ament_prefix_path.ps1'
+[0.167s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/perception/share/perception/hook/ament_prefix_path.dsv'
+[0.167s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/perception/share/perception/hook/ament_prefix_path.sh'
+[0.167s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.167s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.175s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/adaptive_clustering': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/adaptive_clustering -- -j20 -l20
+[0.177s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/autocar_utils': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/autocar_utils -- -j20 -l20
+[0.180s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/delaunay_path_planning': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/delaunay_path_planning -- -j20 -l20
+[0.181s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/erp_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/erp_control -- -j20 -l20
+[0.183s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/patchworkpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/patchworkpp -- -j20 -l20
+[0.367s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ysl/autocar_track/src/path_tracking'
+[0.368s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.368s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.551s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ysl/autocar_track/src/perception/perception_core'
+[0.551s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.551s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.556s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/patchworkpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/patchworkpp -- -j20 -l20
+[0.565s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/patchworkpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/patchworkpp
+[0.586s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patchworkpp)
+[0.586s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/patchworkpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/patchworkpp
+[0.589s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp' for CMake module files
+[0.590s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp' for CMake config files
+[0.590s] Level 1:colcon.colcon_core.shell:create_environment_hook('patchworkpp', 'cmake_prefix_path')
+[0.590s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/cmake_prefix_path.ps1'
+[0.591s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/cmake_prefix_path.dsv'
+[0.591s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/cmake_prefix_path.sh'
+[0.592s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/lib'
+[0.592s] Level 1:colcon.colcon_core.shell:create_environment_hook('patchworkpp', 'ld_library_path_lib')
+[0.592s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/ld_library_path_lib.ps1'
+[0.593s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/ld_library_path_lib.dsv'
+[0.593s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/ld_library_path_lib.sh'
+[0.594s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/bin'
+[0.594s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/lib/pkgconfig/patchworkpp.pc'
+[0.594s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/lib/python3.10/site-packages'
+[0.594s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/bin'
+[0.595s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.ps1'
+[0.596s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.dsv'
+[0.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.sh'
+[0.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.bash'
+[0.598s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.zsh'
+[0.598s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/patchworkpp/share/colcon-core/packages/patchworkpp)
+[0.599s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(patchworkpp)
+[0.599s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp' for CMake module files
+[0.600s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp' for CMake config files
+[0.600s] Level 1:colcon.colcon_core.shell:create_environment_hook('patchworkpp', 'cmake_prefix_path')
+[0.600s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/cmake_prefix_path.ps1'
+[0.601s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/cmake_prefix_path.dsv'
+[0.601s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/cmake_prefix_path.sh'
+[0.602s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/lib'
+[0.602s] Level 1:colcon.colcon_core.shell:create_environment_hook('patchworkpp', 'ld_library_path_lib')
+[0.602s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/ld_library_path_lib.ps1'
+[0.602s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/ld_library_path_lib.dsv'
+[0.603s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/hook/ld_library_path_lib.sh'
+[0.603s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/bin'
+[0.603s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/lib/pkgconfig/patchworkpp.pc'
+[0.603s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/lib/python3.10/site-packages'
+[0.604s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/patchworkpp/bin'
+[0.604s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.ps1'
+[0.604s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.dsv'
+[0.605s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.sh'
+[0.605s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.bash'
+[0.606s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/patchworkpp/share/patchworkpp/package.zsh'
+[0.606s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/patchworkpp/share/colcon-core/packages/patchworkpp)
+[0.709s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/erp_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/erp_control -- -j20 -l20
+[0.710s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/erp_control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/erp_control
+[0.716s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/delaunay_path_planning' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/delaunay_path_planning -- -j20 -l20
+[0.718s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/delaunay_path_planning': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/delaunay_path_planning
+[0.718s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/adaptive_clustering' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/adaptive_clustering -- -j20 -l20
+[0.720s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/adaptive_clustering': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/adaptive_clustering
+[0.755s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/autocar_utils' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --build /home/ysl/autocar_track/build/autocar_utils -- -j20 -l20
+[0.757s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/autocar_utils': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/autocar_utils
+[0.767s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(erp_control)
+[0.767s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control' for CMake module files
+[0.768s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/erp_control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/erp_control
+[0.769s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control' for CMake config files
+[0.769s] Level 1:colcon.colcon_core.shell:create_environment_hook('erp_control', 'cmake_prefix_path')
+[0.769s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/erp_control/share/erp_control/hook/cmake_prefix_path.ps1'
+[0.770s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/erp_control/share/erp_control/hook/cmake_prefix_path.dsv'
+[0.770s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/erp_control/share/erp_control/hook/cmake_prefix_path.sh'
+[0.771s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/lib'
+[0.771s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/bin'
+[0.771s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/lib/pkgconfig/erp_control.pc'
+[0.771s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/lib/python3.10/site-packages'
+[0.772s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/bin'
+[0.772s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.ps1'
+[0.772s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.dsv'
+[0.773s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.sh'
+[0.774s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.bash'
+[0.774s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.zsh'
+[0.775s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/erp_control/share/colcon-core/packages/erp_control)
+[0.775s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(erp_control)
+[0.776s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control' for CMake module files
+[0.777s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control' for CMake config files
+[0.777s] Level 1:colcon.colcon_core.shell:create_environment_hook('erp_control', 'cmake_prefix_path')
+[0.777s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/erp_control/share/erp_control/hook/cmake_prefix_path.ps1'
+[0.778s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/erp_control/share/erp_control/hook/cmake_prefix_path.dsv'
+[0.778s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/erp_control/share/erp_control/hook/cmake_prefix_path.sh'
+[0.779s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/lib'
+[0.779s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/bin'
+[0.779s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/lib/pkgconfig/erp_control.pc'
+[0.779s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/lib/python3.10/site-packages'
+[0.779s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/erp_control/bin'
+[0.780s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.ps1'
+[0.781s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.dsv'
+[0.782s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.sh'
+[0.782s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.bash'
+[0.782s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/erp_control/share/erp_control/package.zsh'
+[0.782s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/erp_control/share/colcon-core/packages/erp_control)
+[0.783s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(delaunay_path_planning)
+[0.783s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning' for CMake module files
+[0.784s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/delaunay_path_planning' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/delaunay_path_planning
+[0.784s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning' for CMake config files
+[0.784s] Level 1:colcon.colcon_core.shell:create_environment_hook('delaunay_path_planning', 'cmake_prefix_path')
+[0.784s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/hook/cmake_prefix_path.ps1'
+[0.784s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/hook/cmake_prefix_path.dsv'
+[0.785s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/hook/cmake_prefix_path.sh'
+[0.785s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/lib'
+[0.785s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/bin'
+[0.785s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/lib/pkgconfig/delaunay_path_planning.pc'
+[0.785s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/lib/python3.10/site-packages'
+[0.785s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/bin'
+[0.785s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.ps1'
+[0.786s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.dsv'
+[0.786s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.sh'
+[0.786s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.bash'
+[0.787s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.zsh'
+[0.787s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/delaunay_path_planning/share/colcon-core/packages/delaunay_path_planning)
+[0.787s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(delaunay_path_planning)
+[0.787s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning' for CMake module files
+[0.787s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning' for CMake config files
+[0.788s] Level 1:colcon.colcon_core.shell:create_environment_hook('delaunay_path_planning', 'cmake_prefix_path')
+[0.788s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/hook/cmake_prefix_path.ps1'
+[0.788s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/hook/cmake_prefix_path.dsv'
+[0.788s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/hook/cmake_prefix_path.sh'
+[0.789s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/lib'
+[0.789s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/bin'
+[0.789s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/lib/pkgconfig/delaunay_path_planning.pc'
+[0.789s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/lib/python3.10/site-packages'
+[0.789s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/delaunay_path_planning/bin'
+[0.789s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.ps1'
+[0.789s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.dsv'
+[0.790s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.sh'
+[0.790s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.bash'
+[0.790s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/delaunay_path_planning/share/delaunay_path_planning/package.zsh'
+[0.790s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/delaunay_path_planning/share/colcon-core/packages/delaunay_path_planning)
+[0.791s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(adaptive_clustering)
+[0.791s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering' for CMake module files
+[0.792s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/adaptive_clustering' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/adaptive_clustering
+[0.792s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering' for CMake config files
+[0.792s] Level 1:colcon.colcon_core.shell:create_environment_hook('adaptive_clustering', 'cmake_prefix_path')
+[0.793s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/cmake_prefix_path.ps1'
+[0.793s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/cmake_prefix_path.dsv'
+[0.793s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/cmake_prefix_path.sh'
+[0.793s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/lib'
+[0.793s] Level 1:colcon.colcon_core.shell:create_environment_hook('adaptive_clustering', 'ld_library_path_lib')
+[0.794s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/ld_library_path_lib.ps1'
+[0.794s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/ld_library_path_lib.dsv'
+[0.794s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/ld_library_path_lib.sh'
+[0.794s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/bin'
+[0.794s] Level 1:colcon.colcon_core.shell:create_environment_hook('adaptive_clustering', 'path')
+[0.794s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/path.ps1'
+[0.795s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/path.dsv'
+[0.795s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/path.sh'
+[0.795s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/lib/pkgconfig/adaptive_clustering.pc'
+[0.795s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/lib/python3.10/site-packages'
+[0.795s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/bin'
+[0.795s] Level 1:colcon.colcon_core.shell:create_environment_hook('adaptive_clustering', 'pythonscriptspath')
+[0.795s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/pythonscriptspath.ps1'
+[0.796s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/pythonscriptspath.dsv'
+[0.796s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/pythonscriptspath.sh'
+[0.796s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.ps1'
+[0.797s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.dsv'
+[0.797s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.sh'
+[0.797s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.bash'
+[0.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.zsh'
+[0.798s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/adaptive_clustering/share/colcon-core/packages/adaptive_clustering)
+[0.798s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(adaptive_clustering)
+[0.798s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering' for CMake module files
+[0.799s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering' for CMake config files
+[0.799s] Level 1:colcon.colcon_core.shell:create_environment_hook('adaptive_clustering', 'cmake_prefix_path')
+[0.799s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/cmake_prefix_path.ps1'
+[0.799s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/cmake_prefix_path.dsv'
+[0.800s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/cmake_prefix_path.sh'
+[0.800s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/lib'
+[0.800s] Level 1:colcon.colcon_core.shell:create_environment_hook('adaptive_clustering', 'ld_library_path_lib')
+[0.800s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/ld_library_path_lib.ps1'
+[0.800s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/ld_library_path_lib.dsv'
+[0.801s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/ld_library_path_lib.sh'
+[0.801s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/bin'
+[0.801s] Level 1:colcon.colcon_core.shell:create_environment_hook('adaptive_clustering', 'path')
+[0.801s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/path.ps1'
+[0.801s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/path.dsv'
+[0.801s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/path.sh'
+[0.801s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/lib/pkgconfig/adaptive_clustering.pc'
+[0.802s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/lib/python3.10/site-packages'
+[0.802s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/adaptive_clustering/bin'
+[0.802s] Level 1:colcon.colcon_core.shell:create_environment_hook('adaptive_clustering', 'pythonscriptspath')
+[0.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/pythonscriptspath.ps1'
+[0.802s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/pythonscriptspath.dsv'
+[0.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/hook/pythonscriptspath.sh'
+[0.803s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.ps1'
+[0.803s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.dsv'
+[0.803s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.sh'
+[0.804s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.bash'
+[0.804s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/adaptive_clustering/share/adaptive_clustering/package.zsh'
+[0.804s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/adaptive_clustering/share/colcon-core/packages/adaptive_clustering)
+[0.812s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(autocar_utils)
+[0.812s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/autocar_utils' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ysl/sensor/install/ntrip_client:/home/ysl/autocar_track/install/perception:/home/ysl/autocar_track/install/path_tracking:/opt/ros/humble /usr/bin/cmake --install /home/ysl/autocar_track/build/autocar_utils
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils' for CMake module files
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils' for CMake config files
+[0.814s] Level 1:colcon.colcon_core.shell:create_environment_hook('autocar_utils', 'cmake_prefix_path')
+[0.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/hook/cmake_prefix_path.ps1'
+[0.814s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/hook/cmake_prefix_path.dsv'
+[0.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/hook/cmake_prefix_path.sh'
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/lib'
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/bin'
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/lib/pkgconfig/autocar_utils.pc'
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/lib/python3.10/site-packages'
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/bin'
+[0.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.ps1'
+[0.815s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.dsv'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.sh'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.bash'
+[0.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.zsh'
+[0.816s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/autocar_utils/share/colcon-core/packages/autocar_utils)
+[0.817s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(autocar_utils)
+[0.817s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils' for CMake module files
+[0.817s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils' for CMake config files
+[0.817s] Level 1:colcon.colcon_core.shell:create_environment_hook('autocar_utils', 'cmake_prefix_path')
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/hook/cmake_prefix_path.ps1'
+[0.818s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/hook/cmake_prefix_path.dsv'
+[0.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/hook/cmake_prefix_path.sh'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/lib'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/bin'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/lib/pkgconfig/autocar_utils.pc'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/lib/python3.10/site-packages'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/autocar_utils/bin'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.ps1'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.dsv'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.sh'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.bash'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/autocar_utils/share/autocar_utils/package.zsh'
+[0.820s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/autocar_utils/share/colcon-core/packages/autocar_utils)
+[0.979s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/perception': PYTHONPATH=/home/ysl/autocar_track/build/perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ysl/autocar_track/install/perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ysl/autocar_track/build/perception/build --no-deps symlink_data
+[0.984s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ysl/autocar_track/build/path_tracking': PYTHONPATH=/home/ysl/autocar_track/build/path_tracking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ysl/autocar_track/install/path_tracking/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ysl/autocar_track/build/path_tracking/build --no-deps symlink_data
+[1.530s] Level 1:colcon.colcon_core.shell:create_environment_hook('path_tracking', 'pythonpath_develop')
+[1.530s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/path_tracking' returned '0': PYTHONPATH=/home/ysl/autocar_track/build/path_tracking/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ysl/autocar_track/install/path_tracking/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ysl/autocar_track/build/path_tracking/build --no-deps symlink_data
+[1.531s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/build/path_tracking/share/path_tracking/hook/pythonpath_develop.ps1'
+[1.531s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/build/path_tracking/share/path_tracking/hook/pythonpath_develop.dsv'
+[1.532s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/build/path_tracking/share/path_tracking/hook/pythonpath_develop.sh'
+[1.532s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/path_tracking' for CMake module files
+[1.532s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/path_tracking' for CMake config files
+[1.533s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/path_tracking/lib'
+[1.533s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/path_tracking/bin'
+[1.533s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/path_tracking/lib/pkgconfig/path_tracking.pc'
+[1.533s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/path_tracking/lib/python3.10/site-packages'
+[1.533s] Level 1:colcon.colcon_core.shell:create_environment_hook('path_tracking', 'pythonpath')
+[1.533s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/hook/pythonpath.ps1'
+[1.533s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/hook/pythonpath.dsv'
+[1.533s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/hook/pythonpath.sh'
+[1.534s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/path_tracking/bin'
+[1.534s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(path_tracking)
+[1.534s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/package.ps1'
+[1.534s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/package.dsv'
+[1.534s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/package.sh'
+[1.535s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/package.bash'
+[1.535s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/path_tracking/share/path_tracking/package.zsh'
+[1.535s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/path_tracking/share/colcon-core/packages/path_tracking)
+[1.536s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception', 'pythonpath_develop')
+[1.536s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ysl/autocar_track/build/perception' returned '0': PYTHONPATH=/home/ysl/autocar_track/build/perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ysl/autocar_track/install/perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/ysl/autocar_track/build/perception/build --no-deps symlink_data
+[1.537s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/build/perception/share/perception/hook/pythonpath_develop.ps1'
+[1.537s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/build/perception/share/perception/hook/pythonpath_develop.dsv'
+[1.537s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/build/perception/share/perception/hook/pythonpath_develop.sh'
+[1.537s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/perception' for CMake module files
+[1.538s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/perception' for CMake config files
+[1.538s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/perception/lib'
+[1.538s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/perception/bin'
+[1.538s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/perception/lib/pkgconfig/perception.pc'
+[1.538s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/perception/lib/python3.10/site-packages'
+[1.538s] Level 1:colcon.colcon_core.shell:create_environment_hook('perception', 'pythonpath')
+[1.538s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/perception/share/perception/hook/pythonpath.ps1'
+[1.538s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ysl/autocar_track/install/perception/share/perception/hook/pythonpath.dsv'
+[1.538s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ysl/autocar_track/install/perception/share/perception/hook/pythonpath.sh'
+[1.539s] Level 1:colcon.colcon_core.environment:checking '/home/ysl/autocar_track/install/perception/bin'
+[1.539s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(perception)
+[1.539s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/perception/share/perception/package.ps1'
+[1.539s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ysl/autocar_track/install/perception/share/perception/package.dsv'
+[1.539s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/perception/share/perception/package.sh'
+[1.540s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/perception/share/perception/package.bash'
+[1.540s] INFO:colcon.colcon_core.shell:Creating package script '/home/ysl/autocar_track/install/perception/share/perception/package.zsh'
+[1.540s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ysl/autocar_track/install/perception/share/colcon-core/packages/perception)
+[1.540s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.540s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.540s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.540s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.544s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.544s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.544s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.553s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.553s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ysl/autocar_track/install/local_setup.ps1'
+[1.554s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ysl/autocar_track/install/_local_setup_util_ps1.py'
+[1.555s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ysl/autocar_track/install/setup.ps1'
+[1.556s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ysl/autocar_track/install/local_setup.sh'
+[1.556s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ysl/autocar_track/install/_local_setup_util_sh.py'
+[1.556s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ysl/autocar_track/install/setup.sh'
+[1.557s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ysl/autocar_track/install/local_setup.bash'
+[1.558s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ysl/autocar_track/install/setup.bash'
+[1.559s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ysl/autocar_track/install/local_setup.zsh'
+[1.559s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ysl/autocar_track/install/setup.zsh'
