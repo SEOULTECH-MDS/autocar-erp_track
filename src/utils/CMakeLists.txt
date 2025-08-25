@@ -21,6 +21,11 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   autocar_utils/time_plot.py
   autocar_utils/autocar_util.py
+  autocar_utils/cubic_spline_interpolator.py
+  autocar_utils/euler_from_quaternion.py
+  autocar_utils/normalise_angle.py
+  autocar_utils/utils.py
+  autocar_utils/yaw_to_quaternion.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

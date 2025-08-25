@@ -7,7 +7,6 @@ from CurvesGenerator.bezier_path import calc_4points_bezier_path
 
 import rclpy
 from rclpy.node import Node
-from tf_transformations import quaternion_from_euler
 from visualization_msgs.msg import Marker, MarkerArray
 from geometry_msgs.msg import Point, PoseStamped, Pose
 from nav_msgs.msg import Path
@@ -15,6 +14,24 @@ from nav_msgs.msg import Path
 from delaunay_path_planning import DelaunayPathPlanning
 
 # color = [(255,255,255), (255,255,0), (255,0,255), (0,255,255), (0,0,255), (0,255,0), (255,0,0), (255,255,122), (255,122,255), (122,255,255), (255,122,122), (122,255,122), (122,122,255)]
+
+def quaternion_from_euler(roll, pitch, yaw):
+    """
+    Convert Euler angles to quaternion
+    """
+    cy = math.cos(yaw * 0.5)
+    sy = math.sin(yaw * 0.5)
+    cp = math.cos(pitch * 0.5)
+    sp = math.sin(pitch * 0.5)
+    cr = math.cos(roll * 0.5)
+    sr = math.sin(roll * 0.5)
+
+    w = cr * cp * cy + sr * sp * sy
+    x = sr * cp * cy - cr * sp * sy
+    y = cr * sp * cy + sr * cp * sy
+    z = cr * cp * sy - sr * sp * cy
+
+    return [x, y, z, w]
 
 class LocalPathPlanning(Node):
     def __init__(self):
