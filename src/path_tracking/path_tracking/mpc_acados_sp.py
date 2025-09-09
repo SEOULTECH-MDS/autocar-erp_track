@@ -72,10 +72,6 @@ class Control(Node):
         self.prev_s = 0.0  # 이전 s 값 저장
         self.s_tolerance = 30.0  # s 값이 역행할 수 있는 최대 허용 범위 (m)
 
-        # velodyne -> base_link 좌표 변환 offset (단순 translation)
-        self.velodyne_to_base_x = -1.3  # velodyne부터 base_link 까지의 x 거리
-        self.velodyne_to_base_y = 0.0   # velodyne부터 base_link 까지의 y 거리
-
         # MPC Solver 초기화
         self.solver = acados_solver() 
 
@@ -104,12 +100,12 @@ class Control(Node):
                 return
             
             # velodyne 좌표계에서 base_link 좌표계로 변환 (단순 translation)
-            self.xs = [pose.pose.position.x + self.velodyne_to_base_x for pose in path_msg.poses]
-            self.ys = [pose.pose.position.y + self.velodyne_to_base_y for pose in path_msg.poses]
+            self.xs = [pose.pose.position.x for pose in path_msg.poses]
+            self.ys = [pose.pose.position.y for pose in path_msg.poses]
             self.cubic_spline = CubicSpline2D(self.xs, self.ys)
 
-            # 차량 상태는 base_link 기준으로 원점에서 시작 (MPC 모델 기준)
-            self.x = 0.0
+            # velodyne 좌표계에서 base_link의 위치
+            self.x = -1.3
             self.y = 0.0
             self.yaw = 0.0
             self.v = 0.0
@@ -344,7 +340,7 @@ class Control(Node):
 
         for i in range(x_opt.shape[0]):  # x_opt의 각 점에 대해 반복
             marker = Marker()
-            marker.header.frame_id = "base_link"  # base_link 좌표계로 변경
+            marker.header.frame_id = "veldoyne"  
             marker.header.stamp = self.get_clock().now().to_msg()
             marker.ns = "predicted_points"
             marker.id = i
@@ -390,7 +386,7 @@ class Control(Node):
 
         for i in range(xref.shape[1]):  # xref의 각 점에 대해 반복
             marker = Marker()
-            marker.header.frame_id = "base_link"  # base_link 좌표계로 변경
+            marker.header.frame_id = "velodyne"  # velodyne 좌표계
             marker.header.stamp = self.get_clock().now().to_msg()
             marker.ns = "xref_points"
             marker.id = i
