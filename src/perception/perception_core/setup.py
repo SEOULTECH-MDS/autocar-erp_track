@@ -37,30 +37,16 @@ setup(
             # 차선
             'camera_pub = perception.lanenet.camera_pub:main',
             'lanenet = perception.lanenet.lanenet:main',
-            
-            # 신호등
-            'camera_traffic = perception.yolov11.camera_traffic:main',
-            'trafficlight = perception.yolov11.trafficlight:main',
 
-            # 장애물
-            #'camera_obstacle = perception.yolov11.camera_obstacle:main',
+            # 라바콘 트랙 주행
             "left_camera = perception.yolov11.obstacle_camera.left_camera:main",
             "right_camera = perception.yolov11.obstacle_camera.right_camera:main",
             'combined_camera = perception.yolov11.obstacle_camera.combined_camera:main',
-            'obstacle = perception.yolov11.obstacle:main',
-            "sensor_fusion_object = perception.sensor_fusion.src.object.sensor_fusion:main",
-            #"object_tracker2D = perception.tracker.src.object_tracker2D:main",
+            'rubber_detect = perception.yolov11.rubber_detect:main',
+            "sensor_fusion_rubber = perception.sensor_fusion.src.rubber.sensor_fusion:main",
             "bbox_tracker = perception.tracker.src.bbox_tracker:main",
             "object_tracker3D = perception.tracker.src.object_tracker3D:main",
             "rubber_visualizer = perception.rubber_visualizer.src.rubber_visualizer:main",
-
-            # 표지판
-            'camera_sign = perception.yolov11.camera_sign:main',
-            'sign = perception.yolov11.sign:main',
-            "sensor_fusion_sign = perception.sensor_fusion.src.sign.sensor_fusion:main",
-            #"sensor_fusion = perception.sensor_fusion.src.sensor_fusion_v3kcity:main",
-
-            
         ],
     },
 )
