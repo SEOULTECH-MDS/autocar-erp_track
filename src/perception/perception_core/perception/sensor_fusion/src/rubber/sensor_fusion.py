@@ -6,7 +6,7 @@ import time
 #from motrackers import CentroidTracker, CentroidKF_Tracker, SORT, IOUTracker
 #from motrackers.utils import draw_tracks
 
-from perception.sensor_fusion.src.object.sensor_fusion_handler import *
+from perception.sensor_fusion.src.rubber.sensor_fusion_handler import *
 
 import rclpy
 from rclpy.node import Node
@@ -35,26 +35,27 @@ import message_filters
 #                                    gamma = np.radians(-5.5), 
 #                                    tx = 0.965, ty = 0.218, tz = -0.965)
 
+
 class SensorFusion(Node):
     def __init__(self):
         super().__init__('sensor_fusion')
         self.bridge = CvBridge()
 
-        self.intrinsic_left = np.array([[381.18310547,   0., 319.02992935, 0.],
-                                         [0., 448.0055542, 207.31755552, 0.],
+        self.intrinsic_left = np.array([[613.971839656390,   0., 332.539706781858, 0.],
+                                         [0., 612.183350003706, 194.030947879572, 0.],
                                          [0., 0., 1., 0.]])
-        self.extrinsic_left = self.rtlc(alpha=np.radians(38.0),
-                                        beta=np.radians(26.0),
-                                        gamma=np.radians(4.9),
-                                        tx=0.965, ty=-0.23, tz=-0.95)
+        self.extrinsic_left = np.array([[0.540123817357205, -0.836380022081143, 0.0934597270861984, 0.415043785992753],
+                                        [-0.410660318053658, -0.358862208954361, -0.838198078117855, 0.556978543554741],
+                                        [0.734591291195008, 0.414350544404062, -0.537298112087236, 0.787840803237706],
+                                        [0., 0., 0., 1.]])
 
-        self.intrinsic_right = np.array([[378.68261719,   0., 328.19930137, 0.],
-                                          [0., 443.68624878, 153.57524293, 0.],
+        self.intrinsic_right = np.array([[607.937482922945,   0., 307.424134965486, 0.],
+                                          [0., 605.865718480504, 190.766867940326, 0.],
                                           [0., 0., 1., 0.]])
-        self.extrinsic_right = self.rtlc(alpha=np.radians(36.8),
-                                         beta=np.radians(-29.4),
-                                         gamma=np.radians(-5.5),
-                                         tx=0.965, ty=0.218, tz=-0.965)
+        self.extrinsic_right = np.array([[-0.537769631785771, -0.838456796953579, 0.105203303368641, 0.415918788909454],
+                                         [-0.412648792947579, -0.352973866953622, -0.839648796794524, -0.556476631579538],
+                                         [0.735176576796524, 0.413203771973579, -0.534771576798634, 0.787573648929678],
+                                         [0., 0., 0., 1.]])
 
         # ROS
         # Subscriber
