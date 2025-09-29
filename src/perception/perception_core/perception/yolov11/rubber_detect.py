@@ -4,6 +4,7 @@ import rclpy
 from rclpy.node import Node
 import torch
 import numpy as np
+import pandas as pd
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from geometry_msgs.msg import Pose, PoseArray
@@ -41,17 +42,16 @@ AGNOSTIC_NMS = False
 
 class YOLO(Node):
     def __init__(self):
-        super().__init__('obstacle_rubber')
+        super().__init__('rubber_track')
         
         # 이미지 메시지를 구독할 서브스크라이버 생성
-        self.subscription = self.create_subscription(Image, '/usb_cam_1/image_raw', self.image_callback, 10)
-        # self.subscription = self.create_subscription(Image, '/camera_rubber/image_raw', self.image_callback, 10)
+        # self.subscription = self.create_subscription(Image, '/usb_cam_1/image_raw', self.image_callback, 10)
+        self.subscription = self.create_subscription(Image, '/image_combined', self.image_callback, 10)
         self.subscription  # 사용하지 않는 변수 경고 방지
 
         # PoseArray 메시지를 퍼블리시할 퍼블리셔 생성
         self.pose_array_pub = self.create_publisher(PoseArray, '/bounding_boxes/rubber', 10)
-        # self.img_res_pub = self.create_publisher(Image, '/yolo/rubber', 10)
-        # self.obstacle_pub = self.create_publisher(String, '/obstacle_type', 10)
+        self.img_res_pub = self.create_publisher(Image, '/yolo/rubber', 10)
         
         # CvBridge 초기화 (ROS 이미지와 OpenCV 이미지 간 변환)
         self.bridge = CvBridge()
@@ -82,6 +82,70 @@ class YOLO(Node):
 
         self.get_logger().info("YOLO Detector node has been started.")
 
+    def dominant_color(self, x, img): # 색 구분
+        try:
+            # 바운딩 박스 좌표 추출 및 유효성 검사
+            xmin, ymin, xmax, ymax = int(x[0]), int(x[1]), int(x[2]), int(x[3])
+            img_height, img_width = img.shape[:2]
+            
+            # 바운딩 박스가 이미지 범위 내에 있는지 확인
+            xmin = max(0, min(xmin, img_width - 1))
+            ymin = max(0, min(ymin, img_height - 1))
+            xmax = max(xmin + 1, min(xmax, img_width))
+            ymax = max(ymin + 1, min(ymax, img_height))
+            
+            # 바운딩 박스 크기가 너무 작은지 확인
+            if (xmax - xmin) < 3 or (ymax - ymin) < 3:
+                return 'unknown', [50, 50, 50], 0
+            
+            # 중간 y 좌표 계산 (바운딩 박스 아래쪽 절반만 사용)
+            mid_y = int((ymin + ymax) / 2)
+            # 바운딩 박스에서 색상 분석할 영역 추출
+            box = img[mid_y:ymax, xmin:xmax]
+            # 빈 배열 체크
+            if box.size == 0:
+                return 'unknown', [50, 50, 50], 0
+            # 데이터 reshape 및 형변환
+            data = np.reshape(box, (-1, 3))
+            # 최소 픽셀 수 확인 (K-means를 위해)
+            if len(data) < 1:
+                return 'unknown', [50, 50, 50], 0
+            data = np.float32(data)
+
+            # K-means 클러스터링
+            criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
+            flags = cv2.KMEANS_RANDOM_CENTERS
+            compactness, labels, centers = cv2.kmeans(data, 1, None, criteria, 10, flags)
+
+            # 주요 색상 추출
+            dominant = centers[0].astype(np.int32)
+            bgr = np.uint8([[dominant]])
+            hsv = cv2.cvtColor(bgr, cv2.COLOR_BGR2HSV)
+
+            h = hsv[0, 0, 0]
+            colors = {'red': [0, 0, 255], 'yellow': [0, 255, 255], 'green': [0, 255, 0],
+                     'blue': [255, 0, 0], 'unknown': [50, 50, 50]}
+            
+            if h < 16:
+                color = 'red'
+            elif h < 35:
+                color = 'yellow'
+            elif h < 92:
+                color = 'green'
+            elif h < 130:
+                color = 'blue'
+            elif h < 172:
+                color = 'unknown'
+            else:
+                color = 'red'
+
+            return color, colors[color], h
+            
+        except Exception as e:
+            # 모든 예외 상황에서 기본값 반환
+            self.get_logger().warn(f"dominant_color error: {e}")
+            return 'unknown', [50, 50, 50], 0
+
     def image_callback(self, image_msg):
         with torch.no_grad():
             start_time = time.perf_counter()
@@ -96,25 +160,12 @@ class YOLO(Node):
             # 객체 검출 수행
             rubbers = self.detect(cv_image)
             if rubbers is None:
-                # [✓] Modified: 검출 결과가 없을 때도 원본 이미지를 표시
-                #cv2.imshow("YOLO Rubber Detection", cv_image)
-                #cv2.waitKey(1)
                 return
-            
-            # [✓] Modified: 검출 결과를 바탕으로 원본 이미지에 바운딩 박스 그리기
-            #for det in rubbers:
-            #    cls, xmin, ymin, xmax, ymax, conf = det
-            #    label = f'{self.names[cls]} {conf:.2f}'
-            #    plot_one_box([xmin, ymin, xmax, ymax], cv_image, label=label, color=self.colors[cls], line_thickness=2)
-            
-            # [✓] Modified: 결과 이미지를 실시간으로 디스플레이
-            #cv2.imshow("YOLO Rubber Detection", cv_image)
-            #cv2.waitKey(1)
             
             # 결과 이미지를 ROS 이미지 메시지로 변환 후 퍼블리시
             image_message = self.bridge.cv2_to_imgmsg(cv_image, encoding="bgr8")
             image_message.header.stamp = self.get_clock().now().to_msg()
-            # self.img_res_pub.publish(image_message)
+            self.img_res_pub.publish(image_message)
             
             # 검출 결과를 PoseArray 메시지로 구성
             pose_array = PoseArray()
@@ -124,7 +175,6 @@ class YOLO(Node):
             for rubber in rubbers:
                 pose = Pose()
                 # 각 필드에 검출 결과 할당 (클래스, 바운딩 박스 좌표, 신뢰도)
-                # [✓] Modified: 각 필드에 float 형식으로 검출 결과 할당 (ROS msg 타입은 float이어야 함)
                 pose.position.x = float(rubber[0])  # 클래스 인덱스 # 0 blue or 1 yellow
                 pose.position.y = float(rubber[5])  # 신뢰도
                 # pose.position.z 는 0으로 유지됨
@@ -133,8 +183,12 @@ class YOLO(Node):
                 pose.orientation.z = float(rubber[3])  # xmax
                 pose.orientation.w = float(rubber[4])  # ymax
 
+                # 클래스 인덱스를 색상 이름으로 변환
+                color_names = {0: 'blue', 1: 'yellow', 2: 'other'}
+                color_name = color_names.get(int(pose.position.x), 'unknown')
+                
                 self.get_logger().info(
-                    f"(color, reliability)=({pose.position.x:.1f}, {pose.position.y:.0f})"
+                    f"({color_name}, reliability)=({pose.position.x:.1f}, {pose.position.y:.2f}) "
                     f"(xmin, ymin)=({pose.orientation.x:.0f}, {pose.orientation.y:.0f}) "
                     f"(xmax, ymax)=({pose.orientation.z:.0f}, {pose.orientation.w:.0f})"
                 )
@@ -175,7 +229,24 @@ class YOLO(Node):
             rubbers = []
             for *xyxy, conf, cls in reversed(det):
                 xmin, ymin, xmax, ymax = [int(tensor.item()) for tensor in xyxy]
-                rubber = [int(cls), xmin, ymin, xmax, ymax, conf]
+                
+                # 색상 분석을 통한 새로운 클래스 인덱스 부여
+                try:
+                    color_name, color_bgr, hue = self.dominant_color([xmin, ymin, xmax, ymax], img0)
+                    # 파란색: 0, 노란색: 1, 나머지: 2
+                    if color_name == 'blue':
+                        new_cls = 0
+                    elif color_name == 'yellow':
+                        new_cls = 1
+                    else:
+                        new_cls = 2
+                    
+                    self.get_logger().debug(f"Detected color: {color_name} (hue: {hue}) -> class: {new_cls}")
+                except Exception as e:
+                    self.get_logger().warn(f"Color detection failed: {e}, using default class 2")
+                    new_cls = 2
+                
+                rubber = [new_cls, xmin, ymin, xmax, ymax, conf]
                 rubbers.append(rubber)
             return rubbers
         return None

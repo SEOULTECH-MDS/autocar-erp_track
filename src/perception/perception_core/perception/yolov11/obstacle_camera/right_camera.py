@@ -27,7 +27,6 @@ class CameraRight(Node):
         # Publish video at 30Hz
         self.timer = self.create_timer(1.0/30.0, self.timer_callback)
         self.cam_exam = self.create_publisher(Image, '/image_right', 10)
-        # self.cam_exam_ = self.create_publisher(Image, '/raw_image_left', 10)
 
     def timer_callback(self):
         ret, frame = self.cap.read()

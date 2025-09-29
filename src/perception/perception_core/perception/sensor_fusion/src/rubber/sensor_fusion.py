@@ -35,7 +35,6 @@ import message_filters
 #                                    gamma = np.radians(-5.5), 
 #                                    tx = 0.965, ty = 0.218, tz = -0.965)
 
-
 class SensorFusion(Node):
     def __init__(self):
         super().__init__('sensor_fusion')
