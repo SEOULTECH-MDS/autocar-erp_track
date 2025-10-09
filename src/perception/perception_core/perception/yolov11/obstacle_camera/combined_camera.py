@@ -17,7 +17,6 @@ class CombineCamera(Node):
         self.bridge = CvBridge()
         
         # ROS
-        # (ROS 노드 초기화는 main()에서 rclpy.init()으로 수행합니다.)
         self.left_sub = message_filters.Subscriber(self, Image, "/image_left")
         self.right_sub = message_filters.Subscriber(self, Image, "/image_right")
         
