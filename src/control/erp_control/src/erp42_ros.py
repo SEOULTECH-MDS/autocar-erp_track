@@ -7,6 +7,7 @@ import numpy as np
 import rclpy
 from rclpy.node import Node
 from ackermann_msgs.msg import AckermannDrive
+from ackermann_msgs.msg import AckermannDriveStamped
 
 S = 0x53
 T = 0x54
@@ -27,7 +28,8 @@ count_alive=0
 class ERP42(Node):
     def __init__(self):
         super().__init__('ERP42')
-        self.cmd_sub = self.create_subscription(AckermannDrive, "/erp_command", self.callback_cmd, 10)
+        # self.cmd_sub = self.create_subscription(AckermannDrive, "/erp_command", self.callback_cmd, 10)
+        self.cmd_sub = self.create_subscription(AckermannDriveStamped, "/erp/cmd_vel", self.callback_cmd, 10)
 
         # 통신 포트 확인
         self.ser = serial.serial_for_url("/dev/ttyERP", baudrate=115200, timeout=1)
@@ -40,9 +42,9 @@ class ERP42(Node):
         return
     
     def callback_cmd(self, cmd_msg):
-        self.target_speed = cmd_msg.speed
-        self.target_brake = cmd_msg.jerk
-        self.target_steer = cmd_msg.steering_angle
+        self.target_speed = cmd_msg.drive.speed
+        self.target_brake = cmd_msg.drive.jerk
+        self.target_steer = cmd_msg.drive.steering_angle
         return
     
     def timer_callback_erp42(self):

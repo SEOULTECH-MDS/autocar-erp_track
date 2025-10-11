@@ -4,7 +4,7 @@ import threading
 import numpy as np
 import math
 import rclpy
-from geometry_msgs.msg import PoseStamped, Twist, PoseArray, PointStamped
+from geometry_msgs.msg import PoseStamped, Twist, PoseArray, PointStamped, TwistWithCovarianceStamped
 from rclpy.node import Node
 from std_msgs.msg import Float64, Header
 from ackermann_msgs.msg import AckermannDriveStamped
@@ -14,7 +14,7 @@ from autocar_utils.yaw_to_quaternion import yaw_to_quaternion
 from autocar_utils.normalise_angle import normalise_angle
 from .acados_setting_sp import acados_solver
 from autocar_utils.utils import CubicSpline2D
-# from sensor_msgs.msg import TwistWithCovarianceStamped
+
 
 from rviz_2d_overlay_msgs.msg import OverlayText
 from visualization_msgs.msg import Marker, MarkerArray
@@ -43,6 +43,7 @@ class Control(Node):
         # self.global_waypoints_sub = self.create_subscription(PoseArray, '/autocar/goals', self.global_waypoints_cb, 10)
         self.local_path_sub = self.create_subscription(Path, '/local_path', self.local_path_cb, 10)
         # self.speed_sub = self.create_subscription(TwistWithCovarianceStamped, "/ublox_gps/fix_velocity", self.speed_cb, 10)  # 차량 현재 속도
+        self.location_sub = self.create_subscription(Odometry, "/odometry", self.odom_cb, 10)  # 차량 현재 위치
 
         # 변수 초기화
         self.x = None
@@ -79,15 +80,33 @@ class Control(Node):
         self.timer_control = self.create_timer(1.0 / self.control_frequency, self.mpc_control)
 
 
-    def speed_cb(self, speed_msg):
+    # def speed_cb(self, speed_msg):
+    #     """
+    #     차량 속도 콜백
+    #     """
+    #     self.x = 0.0
+    #     self.y = 0.0
+    #     self.yaw = 0.0
+    #     self.v = np.sqrt(speed_msg.twist.twist.linear.x **2 + speed_msg.twist.twist.linear.y **2)
+    #     self.s = 0.0
+    #     return
+    
+    def odom_cb(self, odom_msg):
         """
-        차량 속도 콜백
+        차량 위치 콜백
         """
-        self.x = 0.0
-        self.y = 0.0
-        self.yaw = 0.0
-        self.v = np.sqrt(speed_msg.twist.twist.linear.x **2 + speed_msg.twist.twist.linear.y **2)
-        self.s = 0.0
+        with self.lock:
+            # self.x = odom_msg.pose.pose.position.x
+            # self.y = odom_msg.pose.pose.position.y
+            self.x = -1.3
+            self.y = 0.0
+            quaternion = (
+                odom_msg.pose.pose.orientation.x,
+                odom_msg.pose.pose.orientation.y,
+                odom_msg.pose.pose.orientation.z,
+                odom_msg.pose.pose.orientation.w)
+            _, _, self.yaw = euler_from_quaternion(quaternion)
+            self.v = np.sqrt(odom_msg.twist.twist.linear.x **2 + odom_msg.twist.twist.linear.y **2)
         return
     
     def local_path_cb(self, path_msg):
@@ -107,8 +126,8 @@ class Control(Node):
             # velodyne 좌표계에서 base_link의 위치
             self.x = -1.3
             self.y = 0.0
-            self.yaw = 0.0
-            self.v = 0.0
+            # self.yaw = 0.0
+            # self.v = 0.0
             self.s = 0.0
         return
 
@@ -285,10 +304,10 @@ class Control(Node):
         self.prev_steering_angle = self.steering_angle
         self.prev_velocity = self.velocity
 
-        # s 값이 목표 지점에 도달했는지 확인 -> local path 활용 시 s의 끝에 도달했을 떄 속도를 0으로 설정
-        remaining_distance = current_cubic_spline.s[-1] - self.s
-        if remaining_distance <= 0.3:
-            self.velocity = 0.0 # path의 끝에 도달했을 떄 속도를 0으로 설정 -> 브레이크
+        # # s 값이 목표 지점에 도달했는지 확인 -> local path 활용 시 s의 끝에 도달했을 떄 속도를 0으로 설정
+        # remaining_distance = current_cubic_spline.s[-1] - self.s
+        # if remaining_distance <= 0.3:
+        #     self.velocity = 0.0 # path의 끝에 도달했을 떄 속도를 0으로 설정 -> 브레이크
 
         # 차량에 제어 명령 전송
         self.set_vehicle_command(self.steering_angle, self.velocity)
