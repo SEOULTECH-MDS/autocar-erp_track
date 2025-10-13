@@ -118,7 +118,7 @@ class Control(Node):
                 self.get_logger().warn("local path가 충분하지 않습니다.")
                 return
             
-            # velodyne 좌표계에서 base_link 좌표계로 변환 (단순 translation)
+            # velodyne 좌표계에서 local path의 좌표를 spline으로 변환
             self.xs = [pose.pose.position.x for pose in path_msg.poses]
             self.ys = [pose.pose.position.y for pose in path_msg.poses]
             self.cubic_spline = CubicSpline2D(self.xs, self.ys)

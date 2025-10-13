@@ -59,13 +59,13 @@ def acados_solver():
     # cost function weights 
     W_acc = 0.01  # 가속도 입력 크기 가중치 (대폭 감소 - 빠른 가속 적극 허용)
     W_steer = 0.1  # 조향각 입력 크기 가중치 0.2
-    W_steer_rate = 1.8  # 조향각 변화율 가중치
-    W_v = 0.8  # 속도 error 가중치 
-    W_lag = 2.0  # lag error 가중치 1.0
-    W_con = 2.0  # contour error 가중치 1.0
+    W_steer_rate = 1.2  # 조향각 변화율 가중치
+    W_v = 0.5  # 속도 error 가중치 
+    W_lag = 0.5  # lag error 가중치 1.0
+    W_con = 4.0  # contour error 가중치 1.0
 
-    We_v = W_v * 2.0  # terminal cost에서 속도 error 가중치
-    We_lag = W_lag * 3.0  # terminal cost에서 lag error 가중치
+    We_v = W_v   # terminal cost에서 속도 error 가중치
+    We_lag = W_lag  # terminal cost에서 lag error 가중치
     We_con = W_con  # terminal cost에서 contour error 가중치
     We_yaw = 0.4  # heading error 가중치 (terminal cost)
 
