@@ -21,13 +21,149 @@ from perception.yolov11.utils.general import check_img_size, check_requirements,
 from perception.yolov11.utils.plots import plot_one_box
 from perception.yolov11.utils.torch_utils import select_device, time_synchronized
 
-# [✓] Modified: "models" alias 추가
 import sys
 import perception.yolov11.models as models
 sys.modules['models'] = models
-# [✓] Modified: "utils" alias 추가
 import perception.yolov11.utils as utils
 sys.modules['utils'] = utils
+
+# # ============================================================
+# # Soft-NMS(DIoU) & 큰 박스 내부 2분할 유틸 (학습 없이 겹침 대응)
+# # ============================================================
+# def _diou_1vN(box, boxes):
+#     """DIoU 유사 점수 (0~1로 clip)"""
+#     x1 = np.maximum(box[0], boxes[:, 0])
+#     y1 = np.maximum(box[1], boxes[:, 1])
+#     x2 = np.minimum(box[2], boxes[:, 2])
+#     y2 = np.minimum(box[3], boxes[:, 3])
+#     inter = np.maximum(0, x2 - x1) * np.maximum(0, y2 - y1)
+
+#     area1 = (box[2] - box[0]) * (box[3] - box[1])
+#     area2 = (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
+#     union = area1 + area2 - inter + 1e-9
+#     iou = inter / union
+
+#     cx1 = (box[0] + box[2]) / 2.0
+#     cy1 = (box[1] + box[3]) / 2.0
+#     cx2 = (boxes[:, 0] + boxes[:, 2]) / 2.0
+#     cy2 = (boxes[:, 1] + boxes[:, 3]) / 2.0
+#     center_dist = (cx1 - cx2) ** 2 + (cy1 - cy2) ** 2
+
+#     ex1 = np.minimum(box[0], boxes[:, 0])
+#     ey1 = np.minimum(box[1], boxes[:, 1])
+#     ex2 = np.maximum(box[2], boxes[:, 2])
+#     ey2 = np.maximum(box[3], boxes[:, 3])
+#     diag = (ex2 - ex1) ** 2 + (ey2 - ey1) ** 2 + 1e-9
+
+#     diou = iou - center_dist / diag
+#     return np.clip(diou, 0.0, 1.0)
+
+
+# def soft_nms_diou(xyxy, scores, classes, sigma=0.5, score_thr=0.05):
+#     """
+#     Gaussian Soft-NMS with DIoU 감쇠.
+#     입력:
+#       - xyxy: (N,4) ndarray
+#       - scores: (N,) ndarray
+#       - classes: (N,) ndarray
+#     출력:
+#       - kept_xyxy, kept_scores, kept_classes
+#     """
+#     xyxy = xyxy.copy()
+#     scores = scores.copy().astype(np.float32)
+#     classes = classes.copy()
+
+#     kept_b, kept_s, kept_c = [], [], []
+
+#     while xyxy.shape[0] > 0:
+#         m = int(np.argmax(scores))
+#         b_m = xyxy[m].copy()
+#         s_m = float(scores[m])
+#         c_m = classes[m]
+
+#         kept_b.append(b_m)
+#         kept_s.append(s_m)
+#         kept_c.append(c_m)
+
+#         xyxy = np.delete(xyxy, m, axis=0)
+#         scores = np.delete(scores, m, axis=0)
+#         classes = np.delete(classes, m, axis=0)
+#         if xyxy.shape[0] == 0:
+#             break
+
+#         dious = _diou_1vN(b_m, xyxy)
+#         decay = np.exp(-(dious ** 2) / sigma)  # Gaussian decay
+#         scores = scores * decay
+
+#         keep_mask = scores > score_thr
+#         xyxy = xyxy[keep_mask]
+#         scores = scores[keep_mask]
+#         classes = classes[keep_mask]
+
+#     if len(kept_b) == 0:
+#         return np.empty((0, 4), dtype=np.float32), np.empty((0,), dtype=np.float32), np.empty((0,), dtype=np.int32)
+
+#     return (
+#         np.array(kept_b, dtype=np.float32),
+#         np.array(kept_s, dtype=np.float32),
+#         np.array(kept_c, dtype=np.int32),
+#     )
+
+
+# def split_cone_bbox_by_color(img_bgr, bbox, min_gap_px=8):
+#     """
+#     한 덩어리로 나온 큰 상자 내부에서 주황(라바콘) 마스크의 세로 프로파일 valley를 찾아
+#     좌/우 두 상자로 분할. 실패 시 원상자 반환.
+#     """
+#     try:
+#         x1, y1, x2, y2 = map(int, bbox)
+#         H, W = img_bgr.shape[:2]
+#         x1 = max(0, min(x1, W - 1))
+#         x2 = max(x1 + 1, min(x2, W))  # x2가 x1보다 커야 함
+#         y1 = max(0, min(y1, H - 1))
+#         y2 = max(y1 + 1, min(y2, H))  # y2가 y1보다 커야 함
+        
+#         if x2 - x1 < 10 or y2 - y1 < 10:
+#             return [bbox]
+
+#         crop = img_bgr[y1:y2, x1:x2]
+#         if crop.size == 0:
+#             return [bbox]
+
+#         hsv = cv2.cvtColor(crop, cv2.COLOR_BGR2HSV)
+
+#         # 조명/카메라에 맞춰 미세 조정 가능
+#         lower = np.array([5, 80, 80], dtype=np.uint8)
+#         upper = np.array([25, 255, 255], dtype=np.uint8)
+#         mask = cv2.inRange(hsv, lower, upper)
+
+#         proj = mask.sum(axis=0).astype(np.float32)
+#         if proj.size < 24:
+#             return [bbox]
+
+#         k = max(3, proj.size // 50)
+#         proj_s = cv2.blur(proj.reshape(1, -1), (1, k)).flatten()
+
+#         mid = proj_s.size // 2
+#         win = max(10, proj_s.size // 5)
+#         s, e = max(0, mid - win), min(proj_s.size - 1, mid + win)
+#         valley = s + int(np.argmin(proj_s[s:e]))
+
+#         left_peak = float(proj_s[:valley].max() if valley > 0 else 0.0)
+#         right_peak = float(proj_s[valley + 1:].max() if valley < proj_s.size - 1 else 0.0)
+#         valley_val = float(proj_s[valley])
+
+#         # 양쪽 peak가 있고, valley가 충분히 낮으면 분할 승인
+#         if min(left_peak, right_peak) > 0 and valley_val < 0.35 * max(left_peak, right_peak):
+#             if valley > min_gap_px and (proj_s.size - valley) > min_gap_px:
+#                 x_mid = x1 + valley
+#                 return [(x1, y1, x_mid, y2), (x_mid, y1, x2, y2)]
+
+#         return [bbox]
+    
+#     except Exception as e:
+#         print(f"Error in split_cone_bbox_by_color: {e}")
+#         return [bbox]
 
 # 하이퍼파라미터 및 설정
 package_share = get_package_share_directory('perception')
@@ -35,8 +171,9 @@ WEIGHTS = os.path.join(package_share, 'yolov11', 'weights', 'rubber_ver2.pt')
 IMG_SIZE = 640
 DEVICE = ''
 AUGMENT = False
-CONF_THRES = 0.60
-IOU_THRES = 0.35
+CONF_THRES = 0.25       # 0.60 → 0.25 (부분가림 상자 보존, 검출단계)
+POST_CONF = 0.60        # 최종 검출 결과 신뢰도
+IOU_THRES = 0.80        # 0.35 → 0.80 (겹친 상자 동시 보존 유리)
 CLASSES = None
 AGNOSTIC_NMS = False
 
@@ -46,6 +183,7 @@ class YOLO(Node):
         
         # 이미지 메시지를 구독할 서브스크라이버 생성
         # self.subscription = self.create_subscription(Image, '/usb_cam_1/image_raw', self.image_callback, 10)
+        # self.subscription = self.create_subscription(Image, '/image_right', self.image_callback, 10)
         self.subscription = self.create_subscription(Image, '/image_combined', self.image_callback, 10)
         self.subscription  # 사용하지 않는 변수 경고 방지
 
@@ -161,6 +299,10 @@ class YOLO(Node):
             rubbers = self.detect(cv_image)
             if rubbers is None:
                 return
+
+            # for r in rubbers:
+            #     _, x1, y1, x2, y2, conf = r
+            #     cv2.rectangle(cv_image, (int(x1), int(y1)), (int(x2), int(y2)), (0,255,0), 2)
             
             # 결과 이미지를 ROS 이미지 메시지로 변환 후 퍼블리시
             image_message = self.bridge.cv2_to_imgmsg(cv_image, encoding="bgr8")
@@ -173,9 +315,12 @@ class YOLO(Node):
             pose_array.header.frame_id = 'yolo'
             
             for rubber in rubbers:
+                if float(rubber[5]) < POST_CONF: # 후처리 신뢰도 임계값
+                    continue
+
                 pose = Pose()
                 # 각 필드에 검출 결과 할당 (클래스, 바운딩 박스 좌표, 신뢰도)
-                pose.position.x = float(rubber[0])  # 클래스 인덱스 # 0 blue or 1 yellow
+                pose.position.x = float(rubber[0])  # 클래스 인덱스 # 0 blue or 1 yellow, 2 other
                 pose.position.y = float(rubber[5])  # 신뢰도
                 # pose.position.z 는 0으로 유지됨
                 pose.orientation.x = float(rubber[1])  # xmin
@@ -222,7 +367,74 @@ class YOLO(Node):
         pred = non_max_suppression(pred, CONF_THRES, IOU_THRES, classes=CLASSES, agnostic=AGNOSTIC_NMS)
         
         det = pred[0]
-        
+
+        # if det is not None and len(det):
+        #     # 원본 크기로 좌표 스케일 복원
+        #     det[:, :4] = scale_coords(img.shape[2:], det[:, :4], img0.shape).round()
+
+        #     det_np = det.detach().cpu().numpy()
+        #     xyxy = det_np[:, :4]                      # (N,4)
+        #     scores = det_np[:, 4].astype(np.float32)  # (N,)
+        #     classes = det_np[:, 5].astype(np.int32)   # (N,)
+
+        #     # ---------- Soft-NMS(DIoU): 지우지 말고 점수 감쇠 ----------
+        #     xyxy_s, scores_s, classes_s = soft_nms_diou(
+        #         xyxy, scores, classes, sigma=0.5, score_thr=0.05
+        #     )
+
+        #     # ---------- 큰 박스 2분할(색 기반) + 한 번 더 약하게 Soft-NMS ----------
+        #     rubbers = []
+        #     if xyxy_s.shape[0] > 0:
+        #         widths = (xyxy_s[:, 2] - xyxy_s[:, 0])
+        #         median_w = float(np.median(widths)) if widths.size else 0.0
+        #         big_thresh = 1.8 * median_w if median_w > 0 else float('inf')
+
+        #         refined_boxes, refined_scores, refined_classes = [], [], []
+        #         for b, s, c in zip(xyxy_s, scores_s, classes_s):
+        #             w = b[2] - b[0]
+        #             if w > big_thresh:
+        #                 parts = split_cone_bbox_by_color(img0, b)
+        #                 for pb in parts:
+        #                     refined_boxes.append(pb)
+        #                     refined_scores.append(s)
+        #                     refined_classes.append(c)
+        #             else:
+        #                 refined_boxes.append(tuple(map(int, b)))
+        #                 refined_scores.append(float(s))
+        #                 refined_classes.append(int(c))
+
+        #         xyxy_r = np.array(refined_boxes, dtype=np.float32)
+        #         scores_r = np.array(refined_scores, dtype=np.float32)
+        #         classes_r = np.array(refined_classes, dtype=np.int32)
+
+        #         if xyxy_r.shape[0] > 0:
+        #             xyxy_f, scores_f, classes_f = soft_nms_diou(
+        #                 xyxy_r, scores_r, classes_r, sigma=0.5, score_thr=0.05
+        #             )
+        #         else:
+        #             xyxy_f, scores_f, classes_f = xyxy_r, scores_r, classes_r
+
+        #         # ---------- 색 재분류(blue=0 / yellow=1 / other=2) ----------
+        #         for b, s in zip(xyxy_f.astype(int), scores_f):
+        #             xmin, ymin, xmax, ymax = map(int, b.tolist())
+        #             try:
+        #                 color_name, color_bgr, hue = self.dominant_color([xmin, ymin, xmax, ymax], img0)
+        #                 if color_name == 'blue':
+        #                     new_cls = 0
+        #                 elif color_name == 'yellow':
+        #                     new_cls = 1
+        #                 else:
+        #                     new_cls = 2
+        #             except Exception as e:
+        #                 self.get_logger().warn(f"Color detection failed: {e}, using default class 2")
+        #                 new_cls = 2
+
+        #             rubbers.append([new_cls, xmin, ymin, xmax, ymax, float(s)])
+
+        #     return rubbers
+
+        # return None
+
         if det is not None and len(det):
             # 검출된 바운딩 박스 좌표를 원본 이미지 크기에 맞게 스케일 조정
             det[:, :4] = scale_coords(img.shape[2:], det[:, :4], img0.shape).round()
@@ -250,24 +462,7 @@ class YOLO(Node):
                 rubbers.append(rubber)
             return rubbers
         return None
-    '''
-    def callback_obstacle_pub(self):
-        final_check = String()
-        data = ""
-        # 각 클래스의 큐 크기를 QUEUE_SIZE로 유지
-        for n in range(5):
-            while len(self.queue_list[n]) > QUEUE_SIZE:
-                del self.queue_list[n][0]
-            if self.hard_vote(self.queue_list[n]):
-                data += CLASS_MAP[n] if data == "" else f",{CLASS_MAP[n]}"
 
-        if data == "":
-            data = "None"
-
-        self.get_logger().info(f"Obstacle type: {data}")
-        final_check.data = data
-        self.obstacle_pub.publish(final_check)
-    '''
 def main(args=None):
     rclpy.init(args=args)
     yolo_detector = YOLO()
