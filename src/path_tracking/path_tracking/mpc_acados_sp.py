@@ -299,8 +299,8 @@ class Control(Node):
 
         # 제어 입력
         # self.steering_angle = u_opt[1, 0] - 0.14137166941  # 조향각 (delta) alignment 보정 -2.7도
-        self.steering_angle = u_opt[1, 0]  # 조향각 (delta)
-        self.velocity = x_opt[1, 3]        # 속도 (v)
+        self.steering_angle = u_opt[0, 0]  # 조향각 (delta) 0step에서의 조향각 사용
+        self.velocity = x_opt[1, 3]        # 속도 (v) 1step 뒤의 속도 사용
 
         # 이전 제어 입력 저장 (다음 실패 시 fallback용)
         self.prev_steering_angle = self.steering_angle
