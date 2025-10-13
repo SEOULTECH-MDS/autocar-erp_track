@@ -100,13 +100,15 @@ class Control(Node):
             # self.y = odom_msg.pose.pose.position.y
             self.x = -1.3
             self.y = 0.0
-            quaternion = (
-                odom_msg.pose.pose.orientation.x,
-                odom_msg.pose.pose.orientation.y,
-                odom_msg.pose.pose.orientation.z,
-                odom_msg.pose.pose.orientation.w)
-            _, _, self.yaw = euler_from_quaternion(quaternion)
+            # quaternion = (
+            #     odom_msg.pose.pose.orientation.x,
+            #     odom_msg.pose.pose.orientation.y,
+            #     odom_msg.pose.pose.orientation.z,
+            #     odom_msg.pose.pose.orientation.w)
+            # _, _, self.yaw = euler_from_quaternion(quaternion)
+            self.yaw = 0.0
             self.v = np.sqrt(odom_msg.twist.twist.linear.x **2 + odom_msg.twist.twist.linear.y **2)
+            self.s = 0.0
         return
     
     def local_path_cb(self, path_msg):
@@ -124,11 +126,11 @@ class Control(Node):
             self.cubic_spline = CubicSpline2D(self.xs, self.ys)
 
             # velodyne 좌표계에서 base_link의 위치
-            self.x = -1.3
-            self.y = 0.0
-            # self.yaw = 0.0
-            # self.v = 0.0
-            self.s = 0.0
+            # self.x = -1.3
+            # self.y = 0.0
+            # # self.yaw = 0.0
+            # # self.v = 0.0
+            # self.s = 0.0
         return
 
     def calc_current_s(self, _cubic_spline):
