@@ -52,8 +52,8 @@ class LocalPathPlanning(Node):
 
         midpoints = self.path_planner.update(cones, labels)
         
-        # velodyne 기준 고정 시작점으로 base_link의 위치를 midpoint로 추가 (경로 안정성 향상)
-        start_point = np.array([-1.3, 0.0])
+        # velodyne 기준 고정 시작점으로 base_link와 velodyne의 중점 위치를 midpoint로 추가 (경로 안정성 향상)
+        start_point = np.array([-0.65, 0.0])
         if len(midpoints) > 0:
             midpoints = np.vstack([start_point, midpoints])
         else:

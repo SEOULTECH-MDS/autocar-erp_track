@@ -171,8 +171,8 @@ WEIGHTS = os.path.join(package_share, 'yolov11', 'weights', 'rubber_ver2.pt')
 IMG_SIZE = 640
 DEVICE = ''
 AUGMENT = False
-CONF_THRES = 0.25       # 0.60 → 0.25 (부분가림 상자 보존, 검출단계)
-POST_CONF = 0.60        # 최종 검출 결과 신뢰도
+CONF_THRES = 0.40       # 0.60 → 0.25 (부분가림 상자 보존, 검출단계)
+# POST_CONF = 0.60        # 최종 검출 결과 신뢰도
 IOU_THRES = 0.80        # 0.35 → 0.80 (겹친 상자 동시 보존 유리)
 CLASSES = None
 AGNOSTIC_NMS = False
@@ -315,8 +315,8 @@ class YOLO(Node):
             pose_array.header.frame_id = 'yolo'
             
             for rubber in rubbers:
-                if float(rubber[5]) < POST_CONF: # 후처리 신뢰도 임계값
-                    continue
+                # if float(rubber[5]) < POST_CONF: # 후처리 신뢰도 임계값
+                #     continue
 
                 pose = Pose()
                 # 각 필드에 검출 결과 할당 (클래스, 바운딩 박스 좌표, 신뢰도)

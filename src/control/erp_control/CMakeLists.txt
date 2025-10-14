@@ -23,6 +23,7 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   src/erp42_ros.py
   src/final_speed_pub.py
+  src/ERP42_ros2.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

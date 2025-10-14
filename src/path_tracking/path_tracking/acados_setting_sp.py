@@ -25,14 +25,14 @@ def acados_solver():
     MAX_SPEED = 4.0  # 최대 속도 [m/s]
     MIN_SPEED = -4.0  # 최소 속도 [m/s] 
     MAX_ACCEL = 10.0  # 최대 가속도 [m/s^2] (마찰력 극복을 위해 증가)
-    MIN_ACCEL = -1e3  # 최대 감속도 [m/s^2]
+    MIN_ACCEL = -9.0  # 최대 감속도 [m/s^2]
 
     NX = 5  # reference size (x, y, yaw, v, s)
     ND = 1 # 이전 조향각 입력 크기 (delta)
     NV = 2 # tangent vector size (tx, ty)
     
-    T = 2.0
-    N = 20  # 예측 구간 [s]
+    T = 1.0
+    N = 10 # 예측 구간 [s]
 
     # cost type
     ocp.cost.cost_type = 'EXTERNAL'
@@ -57,17 +57,18 @@ def acados_solver():
     # m_term = -0.3 # terminal cost에서 lag, con error 비율 감소시키는 가중치
 
     # cost function weights 
-    W_acc = 0.01  # 가속도 입력 크기 가중치 (대폭 감소 - 빠른 가속 적극 허용)
-    W_steer = 0.1  # 조향각 입력 크기 가중치 0.2
-    W_steer_rate = 1.2  # 조향각 변화율 가중치
-    W_v = 0.5  # 속도 error 가중치 
+    W_acc = 0.1  # 가속도 입력 크기 가중치 (대폭 감소 - 빠른 가속 적극 허용)
+    W_steer = 0.08  # 조향각 입력 크기 가중치 0.2
+    W_steer_rate = 3.5  # 조향각 변화율 가중치
+    W_v = 1.0  # 속도 error 가중치 
     W_lag = 0.5  # lag error 가중치 1.0
-    W_con = 4.0  # contour error 가중치 1.0
+    W_con = 6.0  # contour error 가중치 1.0
+
 
     We_v = W_v   # terminal cost에서 속도 error 가중치
     We_lag = W_lag  # terminal cost에서 lag error 가중치
     We_con = W_con  # terminal cost에서 contour error 가중치
-    We_yaw = 0.4  # heading error 가중치 (terminal cost)
+    We_yaw = 3.0  # heading error 가중치 (terminal cost)
 
     # parameter variables
     NP = NX + ND + NV    # NX: 참조 변수 크기, ND: 이전 조향각 입력 크기 NV: 접선 벡터 크기

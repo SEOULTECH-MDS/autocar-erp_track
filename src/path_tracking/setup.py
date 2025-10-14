@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'mpc = path_tracking.mpc_acados_sp:main'
+            'mpc = path_tracking.mpc_acados_sp:main',
+            'plotter = path_tracking.mpc_realtime_plotter:main'
         ],
     },
 )

@@ -23,8 +23,8 @@ from rclpy.qos import QoSProfile, DurabilityPolicy
 
 NX = 5  # 상태 변수 크기 (x, y, yaw, v, s)
 NU = 2 # 제어 입력 크기 (delta , a)
-T = 2.0  # 예측 시간 [s]
-N = 20  # 예측 구간 [s]
+T = 1.0  # 예측 시간 [s]
+N = 10  # 예측 구간 [s]
 
 class Control(Node):
     def __init__(self):
@@ -43,7 +43,7 @@ class Control(Node):
         # self.global_waypoints_sub = self.create_subscription(PoseArray, '/autocar/goals', self.global_waypoints_cb, 10)
         self.local_path_sub = self.create_subscription(Path, '/local_path', self.local_path_cb, 10)
         # self.speed_sub = self.create_subscription(TwistWithCovarianceStamped, "/ublox_gps/fix_velocity", self.speed_cb, 10)  # 차량 현재 속도
-        self.location_sub = self.create_subscription(Odometry, "/odometry", self.odom_cb, 10)  # 차량 현재 위치
+        self.location_sub = self.create_subscription(Odometry, "/autocar/location", self.odom_cb, 10)  # 차량 현재 위치
 
         # 변수 초기화
         self.x = None
@@ -98,7 +98,7 @@ class Control(Node):
         with self.lock:
             # self.x = odom_msg.pose.pose.position.x
             # self.y = odom_msg.pose.pose.position.y
-            self.x = -1.3
+            self.x = 0.0
             self.y = 0.0
             # quaternion = (
             #     odom_msg.pose.pose.orientation.x,
@@ -108,6 +108,8 @@ class Control(Node):
             # _, _, self.yaw = euler_from_quaternion(quaternion)
             self.yaw = 0.0
             self.v = np.sqrt(odom_msg.twist.twist.linear.x **2 + odom_msg.twist.twist.linear.y **2)
+            if self.v < 0.1:
+                self.v = 0.2  # 너무 느리면 0.2m/s로 보정 (정지 방지)
             self.s = 0.0
         return
     
@@ -219,16 +221,18 @@ class Control(Node):
                 if s > cubic_spline.s[-1]:
                     # 끝점을 넘어갔으면 끝점으로 고정하고 속도 0 설정
                     s = cubic_spline.s[-1] - 0.1
-                    target_vel = 0.0
+                    target_vel = self.target_vel
+                    # target_vel = 0.0
                 else:
                     # 끝점까지 남은 거리 계산
                     remaining_distance = cubic_spline.s[-1] - s
+                    target_vel = self.target_vel
 
-                    if remaining_distance <= 3.0:  # 3m 이내에서 미리 속도 0 설정
-                        target_vel = 0.0
-                    else:
-                        # 정상 범위 내라면 원래 목표 속도 사용
-                        target_vel = self.target_vel
+                    # if remaining_distance <= 3.0:  # 3m 이내에서 미리 속도 0 설정
+                    #     target_vel = 0.0
+                    # else:
+                    #     # 정상 범위 내라면 원래 목표 속도 사용
+                    #     target_vel = self.target_vel
                 
                 # 다음 iteration을 위해 current_s 업데이트
                 current_s = s
@@ -361,7 +365,7 @@ class Control(Node):
 
         for i in range(x_opt.shape[0]):  # x_opt의 각 점에 대해 반복
             marker = Marker()
-            marker.header.frame_id = "veldoyne"  
+            marker.header.frame_id = "velodyne"  
             marker.header.stamp = self.get_clock().now().to_msg()
             marker.ns = "predicted_points"
             marker.id = i
@@ -387,8 +391,8 @@ class Control(Node):
             marker.scale.z = 0.05  # 화살표 두께
 
             # 색상 설정
-            marker.color.r = 0.0  
-            marker.color.g = 1.0
+            marker.color.r = 1.0  
+            marker.color.g = 0.0
             marker.color.b = 0.0
             marker.color.a = 1.0  # 불투명
 
