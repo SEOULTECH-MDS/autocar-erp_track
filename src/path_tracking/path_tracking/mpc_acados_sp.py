@@ -203,7 +203,7 @@ class Control(Node):
 
     def calc_ref_trajectory(self, _cubic_spline):
         """
-        MPC 예측 step에 대한 refrecne trajectory 계산
+        MPC 예측 step에 대한 reference trajectory 계산
         """
         cubic_spline = _cubic_spline
 
@@ -214,26 +214,17 @@ class Control(Node):
             current_s = self.s
 
             for i in range(N):
-                # 다음 s 값을 먼저 계산
+                # 다음 s 값 계산
                 s = current_s + self.dt * self.target_vel
                 
-                # s가 끝점을 넘어갔는지 확인
+                # s 값 범위 제한
                 if s > cubic_spline.s[-1]:
-                    # 끝점을 넘어갔으면 끝점으로 고정하고 속도 0 설정
                     s = cubic_spline.s[-1] - 0.1
-                    target_vel = self.target_vel
-                    # target_vel = 0.0
-                else:
-                    # 끝점까지 남은 거리 계산
-                    remaining_distance = cubic_spline.s[-1] - s
-                    target_vel = self.target_vel
-
-                    # if remaining_distance <= 3.0:  # 3m 이내에서 미리 속도 0 설정
-                    #     target_vel = 0.0
-                    # else:
-                    #     # 정상 범위 내라면 원래 목표 속도 사용
-                    #     target_vel = self.target_vel
                 
+                # 곡률 기반 속도 조정
+                curvature = cubic_spline.calc_curvature(s)
+                target_vel = self.target_vel * (0.5 if abs(curvature) > 0.1 else 1.0)
+
                 # 다음 iteration을 위해 current_s 업데이트
                 current_s = s
 
