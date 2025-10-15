@@ -23,8 +23,8 @@ from rclpy.qos import QoSProfile, DurabilityPolicy
 
 NX = 5  # 상태 변수 크기 (x, y, yaw, v, s)
 NU = 2 # 제어 입력 크기 (delta , a)
-T = 1.0  # 예측 시간 [s]
-N = 10  # 예측 구간 [s]
+T = 2.0 # 예측 시간 [s]
+N = 20  # 예측 구간 [s]
 
 class Control(Node):
     def __init__(self):
@@ -60,7 +60,7 @@ class Control(Node):
         self.control_frequency = 20.0 # HZ
         self.dt = T / N
 
-        self.target_vel = 4.0  # 목표 속도 (m/s)
+        self.target_vel = 2.5  # 목표 속도 (m/s)
         self.steering_angle = 0.0
         self.velocity = 0.0
         

@@ -29,6 +29,10 @@ class Object3DTracker(Node):
 
         self.tracked_pub = self.create_publisher(MarkerArray, "/sensor_fusion/tracked_rubber_cones", 10)
         
+        # 30Hz 타이머 설정
+        self.latest_tracked_markers = None
+        self.timer = self.create_timer(1.0/20.0, self.timer_callback)  # 20Hz
+
     def callback_rubber_cones(self, matched_cones_msg):
         cones, labels = self.get_cones(matched_cones_msg)
         
@@ -50,8 +54,14 @@ class Object3DTracker(Node):
         
         self.label_cones(cones, labels, blue_marker, yellow_marker, white_marker)
         
-        self.tracked_pub.publish(tracked_markers)
+        # 최신 데이터 저장 (30Hz 타이머에서 퍼블리시)
+        self.latest_tracked_markers = tracked_markers
         return
+    
+    def timer_callback(self):
+        """30Hz로 최신 트래킹 데이터를 퍼블리시"""
+        if self.latest_tracked_markers is not None:
+            self.tracked_pub.publish(self.latest_tracked_markers)
     
     @staticmethod
     def label_cones(cones_track, labels_track, blue_marker, yellow_marker, white_marker):

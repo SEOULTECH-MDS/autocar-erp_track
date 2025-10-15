@@ -62,7 +62,7 @@ class erp42(Node):
     self.t = 0
     self.dt = 0.3
 
-    self.timer1 = self.create_timer(0.1, self.timer_callback)
+    self.timer1 = self.create_timer(0.05, self.timer_callback)
 
   def GetAorM(self):
     AorM = 0x01

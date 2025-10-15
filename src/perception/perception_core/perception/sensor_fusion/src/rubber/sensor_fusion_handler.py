@@ -50,7 +50,7 @@ def projection_3d_to_2d(clusters, intrinsic, extrinsic):
     center_y = points_c[1,:] / points_c[2,:]
     
     height, width = 480, 640
-    valid_indicies = (center_x >= 0) & (center_x < width) & (center_y >=0) & (center_y < height)
+    valid_indicies = (center_x >= -50) & (center_x < width+50) & (center_y >=-50) & (center_y < height+50)
     
     center_x = center_x[valid_indicies]
     center_y = center_y[valid_indicies]
@@ -136,6 +136,26 @@ def label_clusters(clusters_3d, labels, blue_marker, yellow_marker, white_marker
             yellow_marker.points.append(point)
         else:
             white_marker.points.append(point)
+            # # 라벨이 0이나 1이 아닐 때, 가장 가까운 클러스터 점의 라벨을 찾기
+            # current_point = clusters_3d[i]
+            # min_distance = float('inf')
+            # nearest_label = -1
+            
+            # for j in range(len(clusters_3d)):
+            #     if i != j and labels[j] in [0, 1]:  # 자기 자신이 아니고 유효한 라벨을 가진 점만 고려
+            #         # 유클리드 거리 계산
+            #         distance = np.sqrt(np.sum((current_point - clusters_3d[j]) ** 2))
+            #         if distance < min_distance:
+            #             min_distance = distance
+            #             nearest_label = labels[j]
+            
+            # # 가장 가까운 점의 라벨에 따라 마커에 추가
+            # if nearest_label == 0:
+            #     blue_marker.points.append(point)
+            # elif nearest_label == 1:
+            #     yellow_marker.points.append(point)
+            # else:
+            #     white_marker.points.append(point)  # 유효한 라벨을 가진 가까운 점이 없는 경우
     return
 
 def visualize_cluster_2d(clusters_2d, img):

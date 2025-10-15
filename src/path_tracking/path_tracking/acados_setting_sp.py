@@ -31,8 +31,8 @@ def acados_solver():
     ND = 1 # 이전 조향각 입력 크기 (delta)
     NV = 2 # tangent vector size (tx, ty)
     
-    T = 1.0
-    N = 10 # 예측 구간 [s]
+    T = 2.0
+    N = 20 # 예측 구간 [s]
 
     # cost type
     ocp.cost.cost_type = 'EXTERNAL'
@@ -56,19 +56,28 @@ def acados_solver():
     # W_yaw = 0.3  # heading error 가중치 (terminal cost) 0.5
     # m_term = -0.3 # terminal cost에서 lag, con error 비율 감소시키는 가중치
 
-    # cost function weights 
-    W_acc = 0.1  # 가속도 입력 크기 가중치 (대폭 감소 - 빠른 가속 적극 허용)
-    W_steer = 0.08  # 조향각 입력 크기 가중치 0.2
-    W_steer_rate = 3.5  # 조향각 변화율 가중치
-    W_v = 1.0  # 속도 error 가중치 
-    W_lag = 0.5  # lag error 가중치 1.0
-    W_con = 6.0  # contour error 가중치 1.0
+    # 1014
+    # W_acc = 0.1  # 가속도 입력 크기 가중치 (대폭 감소 - 빠른 가속 적극 허용)
+    # W_steer = 0.08  # 조향각 입력 크기 가중치 0.2
+    # W_steer_rate = 3.5  # 조향각 변화율 가중치
+    # W_v = 1.0  # 속도 error 가중치 
+    # W_lag = 0.5 # lag error 가중치 1.0
+    # W_con = 6.0  # contour error 가중치 1.0
+
+
+    # cost function weights - 횡방향 에러 최소화 중점 튜닝
+    W_acc = 0.2  # 가속도 입력 크기 가중치 (약간 감소 - 부드러운 제어 허용)
+    W_steer = 0.05  # 조향각 입력 크기 가중치 (감소 - 적극적인 조향 허용)
+    W_steer_rate = 4.0  # 조향각 변화율 가중치 (감소 - 빠른 조향 변화 허용)
+    W_v = 0.8  # 속도 error 가중치 (약간 감소)
+    W_lag = 1.5  # lag error 가중치 (감소)
+    W_con = 10.0  # contour error 가중치 (대폭 증가 - 횡방향 에러 최소화)
 
 
     We_v = W_v   # terminal cost에서 속도 error 가중치
-    We_lag = W_lag  # terminal cost에서 lag error 가중치
-    We_con = W_con  # terminal cost에서 contour error 가중치
-    We_yaw = 3.0  # heading error 가중치 (terminal cost)
+    We_lag = W_lag * 0.5  # terminal cost에서 lag error 가중치
+    We_con = W_con * 0.8  # terminal cost에서 contour error 가중치 (증가)
+    We_yaw = 2.0  # heading error 가중치 (terminal cost) (감소)
 
     # parameter variables
     NP = NX + ND + NV    # NX: 참조 변수 크기, ND: 이전 조향각 입력 크기 NV: 접선 벡터 크기

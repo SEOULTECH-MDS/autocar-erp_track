@@ -39,7 +39,7 @@ public:
     // Parameters
     this->declare_parameter<std::string>("sensor_model", "VLP-16");
     this->declare_parameter<bool>("print_fps", false);
-    this->declare_parameter<float>("x_axis_min", -3.0);
+    this->declare_parameter<float>("x_axis_min", 0.0);
     this->declare_parameter<float>("x_axis_max", 6.0);
     this->declare_parameter<float>("y_axis_min", -4.0);
     this->declare_parameter<float>("y_axis_max", 4.0);

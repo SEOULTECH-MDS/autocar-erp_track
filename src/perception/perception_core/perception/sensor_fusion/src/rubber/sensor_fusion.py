@@ -71,6 +71,11 @@ class SensorFusion(Node):
         self.fusion_pub = self.create_publisher(MarkerArray, '/sensor_fusion/rubber_cones', 10)
         self.clusters_2d_pub = self.create_publisher(PoseArray, '/clusters_2d', 10)
 
+        # 30Hz 타이머 설정
+        self.latest_fusion_markers = None
+        self.latest_clusters_2d_msg = None
+        self.timer = self.create_timer(1.0/20.0, self.timer_callback)  # 30Hz
+
         self.get_logger().info('🚀  Camera & 3D LiDAR fusion node started.')
 
     def callback_fusion(self, cluster_msg, bbox_msg):
@@ -107,16 +112,26 @@ class SensorFusion(Node):
         label_clusters(clusters.T[:,:3], labels, blue_marker, yellow_marker, white_marker)
 
         fusion_markers.markers.extend([blue_marker, yellow_marker, white_marker])
-        self.fusion_pub.publish(fusion_markers)
+        # self.fusion_pub.publish(fusion_markers)
 
         # ROS Publish (Projected clusters to 2D frame) 
         clusters_2d_right[:, 0] += 640
         clusters_2d = np.vstack([clusters_2d_left, clusters_2d_right])
 
         clusters_2d_msg = self.make_pose_array(clusters_2d)
-        self.clusters_2d_pub.publish(clusters_2d_msg)
+        
+        # 최신 데이터 저장 (30Hz 타이머에서 퍼블리시)
+        self.latest_fusion_markers = fusion_markers
+        self.latest_clusters_2d_msg = clusters_2d_msg
 
         self.get_logger().debug(f'소요 시간: {time.perf_counter() - first_time:.5f}s')
+
+    def timer_callback(self):
+        """30Hz로 최신 데이터를 퍼블리시"""
+        if self.latest_fusion_markers is not None:
+            self.fusion_pub.publish(self.latest_fusion_markers)
+        if self.latest_clusters_2d_msg is not None:
+            self.clusters_2d_pub.publish(self.latest_clusters_2d_msg)
 
     # ───────────────── 유틸 ─────────────────
     def rtlc(self, alpha, beta, gamma, tx, ty, tz):
