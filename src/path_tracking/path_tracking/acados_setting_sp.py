@@ -72,12 +72,13 @@ def acados_solver():
     W_v = 1.5      # 속도 error 가중치 (대폭 증가 - 속도 추종 강화)
     W_lag = 0.8    # lag error 가중치 (감소 - 속도 우선순위 향상)
     W_con = 8.0    # contour error 가중치 (증가 - 정확한 경로 추종 보장)
+    W_yaw = 1.0
 
 
     We_v = W_v * 1.5   # terminal cost에서 속도 error 가중치 (더 증가)
     We_lag = W_lag * 0.7  # terminal cost에서 lag error 가중치 
     We_con = W_con * 1.0  # terminal cost에서 contour error 가중치 (동일 유지)
-    We_yaw = 2.0  # heading error 가중치 (terminal cost) (증가)
+    We_yaw = W_yaw * 2.0  # heading error 가중치 (terminal cost) (증가)
 
     # parameter variables
     NP = NX + ND + NV    # NX: 참조 변수 크기, ND: 이전 조향각 입력 크기 NV: 접선 벡터 크기
@@ -108,7 +109,8 @@ def acados_solver():
                  W_steer_rate * (steering_angle - prev_steering_angle) ** 2 + \
                  W_v * ((vehicle_v - v_ref) ** 2) + \
                  W_lag * ((tx*(vehicle_x - x_ref) + ty*(vehicle_y - y_ref)))**2 + \
-                 W_con * ((ty*(vehicle_x - x_ref) - tx*(vehicle_y - y_ref)))**2
+                 W_con * ((ty*(vehicle_x - x_ref) - tx*(vehicle_y - y_ref)))**2 + \
+                 W_yaw * ((vehicle_yaw - yaw_ref) ** 2)
     ocp.model.cost_expr_ext_cost = stage_cost
 
     # terminal cost function
