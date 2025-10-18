@@ -135,7 +135,15 @@ def label_clusters(clusters_3d, labels, blue_marker, yellow_marker, white_marker
         elif labels[i] == 1:
             yellow_marker.points.append(point)
         else:
-            white_marker.points.append(point)
+            # white_marker.points.append(point)
+            # x좌표가 0.5m 이하인 경우 y좌표에 따라 색상 결정
+            if point.x <= 0.5:
+                if point.y > 0 and point.y < 1.5:
+                    yellow_marker.points.append(point)
+                elif point.y < 0 and point.y > -1.5:
+                    blue_marker.points.append(point)
+            else:
+                white_marker.points.append(point)
             # # 라벨이 0이나 1이 아닐 때, 가장 가까운 클러스터 점의 라벨을 찾기
             # current_point = clusters_3d[i]
             # min_distance = float('inf')
@@ -156,6 +164,14 @@ def label_clusters(clusters_3d, labels, blue_marker, yellow_marker, white_marker
             #     yellow_marker.points.append(point)
             # else:
             #     white_marker.points.append(point)  # 유효한 라벨을 가진 가까운 점이 없는 경우
+    # 노란색 마커가 0개이면 (1,0) 좌표에 노란 마커 1개 추가
+    if len(yellow_marker.points) == 0:
+        default_point = Point()
+        default_point.x = -0.8
+        default_point.y = 1.3
+        default_point.z = 0.0
+        yellow_marker.points.append(default_point)
+    
     return
 
 def visualize_cluster_2d(clusters_2d, img):

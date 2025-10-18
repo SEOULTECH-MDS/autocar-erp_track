@@ -60,7 +60,7 @@ class Control(Node):
         self.control_frequency = 20.0 # HZ
         self.dt = T / N
 
-        self.target_vel = 2.5  # 목표 속도 (m/s)
+        self.target_vel = 1.5  # 목표 속도 (m/s)
         self.steering_angle = 0.0
         self.velocity = 0.0
         
@@ -98,7 +98,7 @@ class Control(Node):
         with self.lock:
             # self.x = odom_msg.pose.pose.position.x
             # self.y = odom_msg.pose.pose.position.y
-            self.x = 0.0
+            self.x = -0.7
             self.y = 0.0
             # quaternion = (
             #     odom_msg.pose.pose.orientation.x,
@@ -108,9 +108,9 @@ class Control(Node):
             # _, _, self.yaw = euler_from_quaternion(quaternion)
             self.yaw = 0.0
             self.v = np.sqrt(odom_msg.twist.twist.linear.x **2 + odom_msg.twist.twist.linear.y **2)
-            if self.v < 0.1:
-                self.v = 0.2  # 너무 느리면 0.2m/s로 보정 (정지 방지)
-            self.s = 0.0
+            if self.v < 0.2:
+                self.v = 0.2  # 너무 느리면 0.3m/s로 보정 (정지 방지)
+            # self.s = 0.0
         return
     
     def local_path_cb(self, path_msg):
@@ -137,8 +137,7 @@ class Control(Node):
 
     def calc_current_s(self, _cubic_spline):
         """
-        이진 탐색과 gradient descent를 사용한 s 값 탐색
-        최근 s값 기준으로 일정 범위 안에서만 탐색
+        현재 위치에서 spline의 가장 가까운 점을 찾아 s 값 계산
         """
         cubic_spline = _cubic_spline
 
@@ -152,18 +151,14 @@ class Control(Node):
         
         total_length = cubic_spline.s[-1]
         
-        # s 탐색 범위를 이전 s 값 기준으로 제한
-        search_start = max(0, self.prev_s - self.s_tolerance)
-        search_end = min(total_length, self.prev_s + 50.0)  # 앞으로 최대 50m까지만 탐색
-        
-        # 1단계: 제한된 범위에서 거친 탐색
-        coarse_resolution = 1.0  # 1m 간격
-        s_coarse = np.arange(search_start, search_end + coarse_resolution, coarse_resolution)
+        # 전체 spline에서 일정 간격으로 탐색
+        resolution = 0.1  # 0.1m 간격
+        s_values = np.arange(0, total_length + resolution, resolution)
         
         min_distance = float('inf')
-        best_s = self.prev_s  # 기본값을 이전 s로 설정
+        best_s = 0.0
         
-        for s_val in s_coarse:
+        for s_val in s_values:
             sx, sy = cubic_spline.calc_position(s_val)
             if sx is None or sy is None:
                 continue
@@ -172,29 +167,6 @@ class Control(Node):
                 min_distance = distance
                 best_s = s_val
         
-        # 2단계: 최적 지점 주변을 세밀하게 탐색
-        search_range = 2.0  # 최적점 주변 ±2m 범위
-        s_start = max(search_start, best_s - search_range)
-        s_end = min(search_end, best_s + search_range)
-        
-        fine_resolution = 0.05  # 0.05m 간격으로 세밀 탐색
-        s_fine = np.arange(s_start, s_end + fine_resolution, fine_resolution)
-        
-        for s_val in s_fine:
-            sx, sy = cubic_spline.calc_position(s_val)
-            if sx is None or sy is None:
-                continue
-            distance = np.sqrt((self.x - sx)**2 + (self.y - sy)**2)
-            if distance < min_distance:
-                min_distance = distance
-                best_s = s_val
-        
-        # s 값이 너무 크게 역행하는 것을 방지 
-        if best_s < self.prev_s - self.s_tolerance:
-            best_s = self.prev_s - self.s_tolerance
-            self.get_logger().warn(f"S 값 역행 제한: {best_s:.2f} (이전: {self.prev_s:.2f})")
-        
-        self.prev_s = best_s  # 이전 s 값 업데이트
         self.s = best_s
         return
 
@@ -219,11 +191,10 @@ class Control(Node):
                 
                 # s 값 범위 제한
                 if s > cubic_spline.s[-1]:
-                    s = cubic_spline.s[-1] - 0.1
-                
+                    s = cubic_spline.s[-1] - 0.05
+
                 # 곡률 기반 속도 조정
-                curvature = cubic_spline.calc_curvature(s)
-                target_vel = self.target_vel * (0.5 if abs(curvature) > 0.1 else 1.0)
+                target_vel = self.target_vel
 
                 # 다음 iteration을 위해 current_s 업데이트
                 current_s = s
@@ -296,6 +267,7 @@ class Control(Node):
         # self.steering_angle = u_opt[1, 0] - 0.14137166941  # 조향각 (delta) alignment 보정 -2.7도
         self.steering_angle = u_opt[0, 0]  # 조향각 (delta) 0step에서의 조향각 사용
         self.velocity = x_opt[1, 3]        # 속도 (v) 1step 뒤의 속도 사용
+
 
         # 이전 제어 입력 저장 (다음 실패 시 fallback용)
         self.prev_steering_angle = self.steering_angle

@@ -50,11 +50,14 @@ class LocalPathPlanning(Node):
         first_time = time.perf_counter()
         cones, labels = self.get_cones(cones_msg)
 
-        midpoints = self.path_planner.update(cones, labels)
-        
+        try:
+            midpoints = self.path_planner.update(cones, labels)
+        except IndexError as e:
+            self.get_logger().warn(f"Path planning failed: {e}")
+            midpoints = np.array([])
+    
         # velodyne 기준 고정 시작점으로 base_link와 velodyne의 중점 위치를 midpoint로 추가 (경로 안정성 향상)
-        start_point = np.array([0.0, 0.0])
-        # start_point = np.array([[-0.65, 0.0], [0.0, 0.0]])
+        start_point = np.array([-0.7, 0.0])
         if len(midpoints) > 0:
             midpoints = np.vstack([start_point, midpoints])
         else:
@@ -62,7 +65,7 @@ class LocalPathPlanning(Node):
     
 
         # 주시 거리 L_D 에서 제일 가까운 midpoint 탐색
-        L_D = 0 #m
+        L_D = 0.0 #m
         L_D_2 = 3.0 #m
         closest_midpoint_idx = None
         farthest_midpoint_idx = None
@@ -97,6 +100,19 @@ class LocalPathPlanning(Node):
         # path_x, path_y, path_yaw = self.get_dubins_path(s_x, s_y, s_yaw, g_x, g_y, g_yaw, R_MIN)
         
         #=== Bezier path ===#
+        # 인덱스 범위 체크 및 예외처리
+        if len(midpoints) < 2:
+            self.get_logger().warn("Midpoints가 충분하지 않습니다. 최소 2개 필요.")
+            return
+        
+        # closest_midpoint_idx가 마지막 인덱스인 경우 처리
+        if closest_midpoint_idx >= len(midpoints) - 1:
+            closest_midpoint_idx = len(midpoints) - 2
+        
+        # farthest_midpoint_idx가 첫 번째 인덱스인 경우 처리
+        if farthest_midpoint_idx <= 0:
+            farthest_midpoint_idx = 1
+            
         s_x, s_y = midpoints[closest_midpoint_idx]
         v_s = midpoints[closest_midpoint_idx+1]-midpoints[closest_midpoint_idx]
         s_yaw = np.arctan2(v_s[1]/v_s[0], 1)

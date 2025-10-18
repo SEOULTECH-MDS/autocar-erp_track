@@ -92,8 +92,8 @@ class SensorFusion(Node):
         clusters_2d_right, valid_right = projection_3d_to_2d(clusters, self.intrinsic_right, self.extrinsic_right)
 
         # Sensor Fusion (Hungarian Algorithm)
-        matched_left = hungarian_match(clusters_2d_left, left_bboxes, left_labels, distance_threshold=120)
-        matched_right = hungarian_match(clusters_2d_right, right_bboxes, right_labels, distance_threshold=120)
+        matched_left = hungarian_match(clusters_2d_left, left_bboxes, left_labels, distance_threshold=80)
+        matched_right = hungarian_match(clusters_2d_right, right_bboxes, right_labels, distance_threshold=80)
 
         labels_left = get_label(matched_left, valid_left)
         labels_right = get_label(matched_right, valid_right)
