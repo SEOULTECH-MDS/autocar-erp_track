@@ -171,6 +171,13 @@ def label_clusters(clusters_3d, labels, blue_marker, yellow_marker, white_marker
         default_point.y = 1.3
         default_point.z = 0.0
         yellow_marker.points.append(default_point)
+
+    if len(blue_marker.points) == 0:
+        default_point = Point()
+        default_point.x = -0.8
+        default_point.y = -1.3
+        default_point.z = 0.0
+        blue_marker.points.append(default_point)
     
     return
 

@@ -24,8 +24,8 @@ def acados_solver():
     MAX_STEER = np.deg2rad(27.0)  # 최대 조향각 [rad]
     MAX_SPEED = 4.0  # 최대 속도 [m/s]
     MIN_SPEED = -4.0  # 최소 속도 [m/s] 
-    MAX_ACCEL = 10.0  # 최대 가속도 [m/s^2] (마찰력 극복을 위해 증가)
-    MIN_ACCEL = -9.0  # 최대 감속도 [m/s^2]
+    MAX_ACCEL = 5.0  # 최대 가속도 [m/s^2] (마찰력 극복을 위해 증가)
+    MIN_ACCEL = -8.0  # 최대 감속도 [m/s^2]
 
     NX = 5  # reference size (x, y, yaw, v, s)
     ND = 1 # 이전 조향각 입력 크기 (delta)
@@ -67,16 +67,16 @@ def acados_solver():
 
     # cost function weights - 경로 추종 우선하면서 적극적 속도 제어
     W_acc = 1e-5   # 가속도 입력 크기 가중치 (감소 - 적극적 가속 허용)
-    W_steer = 0.1  # 조향각 입력 크기 가중치 (감소 - 필요시 조향 허용)
-    W_steer_rate = 3.5  # 조향각 변화율 가중치 (감소 - 빠른 조향 허용)
-    W_v = 2.0      # 속도 error 가중치 (대폭 증가 - 속도 추종 강화)
+    W_steer = 0.09  # 조향각 입력 크기 가중치 (감소 - 필요시 조향 허용)
+    W_steer_rate = 10.0  # 조향각 변화율 가중치 (감소 - 빠른 조향 허용)
+    W_v = 10.0      # 속도 error 가중치 (대폭 증가 - 속도 추종 강화)
     W_lag = 2.0    # lag error 가중치 (감소 - 속도 우선순위 향상)
     W_con = 4.0    # contour error 가중치 (증가 - 정확한 경로 추종 보장)
     W_yaw = 0.4
 
     We_v = W_v * 1.0   # terminal cost에서 속도 error 가중치 (더 증가)
-    We_lag = W_lag * 1.0  # terminal cost에서 lag error 가중치 
-    We_con = W_con * 1.0  # terminal cost에서 contour error 가중치 (동일 유지)
+    We_lag = W_lag * 0.5  # terminal cost에서 lag error 가중치 
+    We_con = W_con * 2.0  # terminal cost에서 contour error 가중치 (동일 유지)
     We_yaw = W_yaw * 1.0  # heading error 가중치 (terminal cost) (증가)
 
     # parameter variables

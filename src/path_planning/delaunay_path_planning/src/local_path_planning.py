@@ -52,7 +52,10 @@ class LocalPathPlanning(Node):
 
         try:
             midpoints = self.path_planner.update(cones, labels)
-        except IndexError as e:
+            # midpoints가 None인 경우 빈 배열로 처리
+            if midpoints is None:
+                midpoints = np.array([])
+        except (IndexError, Exception) as e:
             self.get_logger().warn(f"Path planning failed: {e}")
             midpoints = np.array([])
     

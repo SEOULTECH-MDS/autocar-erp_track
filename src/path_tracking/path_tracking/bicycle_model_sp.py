@@ -11,7 +11,7 @@ def export_spline_bicycle_model() -> AcadosModel:
 
 
     # constants
-    WB = 1.556  # wheel base [m] 1.556
+    WB = 1.2  # wheel base [m] 1.556
     MASS = 500.0  # 차량 질량 [kg]
     ROLLING_RESISTANCE = 0.015  # 굴림 저항 계수
     AIR_DRAG = 0.3  # 공기 저항 계수

@@ -12,7 +12,7 @@ class CameraRight(Node):
         self.publisher_ = self.create_publisher(Image, '/image_right', 10)
         self.bridge = CvBridge()
 
-        self.cap = cv2.VideoCapture(0)
+        self.cap = cv2.VideoCapture(2)
 
         # Set camera format to MJPG and resolution to 640x480
         self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
