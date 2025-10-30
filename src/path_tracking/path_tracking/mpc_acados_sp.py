@@ -60,7 +60,7 @@ class Control(Node):
         self.control_frequency = 20.0 # HZ
         self.dt = T / N
 
-        self.target_vel = 2.0  # 목표 속도 (m/s)
+        self.target_vel = 1.0  # 목표 속도 (m/s)
         self.steering_angle = 0.0
         self.velocity = 0.0
         
@@ -108,8 +108,8 @@ class Control(Node):
             # _, _, self.yaw = euler_from_quaternion(quaternion)
             self.yaw = 0.0
             self.v = np.sqrt(odom_msg.twist.twist.linear.x **2 + odom_msg.twist.twist.linear.y **2)
-            if self.v < 0.2:
-                self.v = 0.2  # 너무 느리면 0.3m/s로 보정 (정지 방지)
+            # if self.v < 0.2:
+            #     self.v = 0.2  # 너무 느리면 0.3m/s로 보정 (정지 방지)
             # self.s = 0.0
         return
     
@@ -251,7 +251,7 @@ class Control(Node):
             self.fail_count += 1
             self.get_logger().error(f"MPC Solver failed with status {status}.")
             # self.prev_steering_angle *= 0.98
-            self.prev_velocity *= 0.98  # solver failure 시 속도 감소
+            self.prev_velocity *= 0.90  # solver failure 시 속도 감소
             self.set_vehicle_command(self.prev_steering_angle, self.prev_velocity) # 이전 제어 입력으로 차량에 입력
             return
         
@@ -264,9 +264,8 @@ class Control(Node):
         self.visualize_predicted_trajectory(x_opt)
 
         # 제어 입력
-        # self.steering_angle = u_opt[1, 0] - 0.14137166941  # 조향각 (delta) alignment 보정 -2.7도
         self.steering_angle = u_opt[0, 0]  # 조향각 (delta) 0step에서의 조향각 사용
-        self.velocity = x_opt[1, 3]        # 속도 (v) 1step 뒤의 속도 사용
+        self.velocity = x_opt[3, 3]        # 속도 (v) 1step 뒤의 속도 사용
 
 
         # 이전 제어 입력 저장 (다음 실패 시 fallback용)

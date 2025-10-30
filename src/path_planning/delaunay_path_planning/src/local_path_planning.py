@@ -108,12 +108,14 @@ class LocalPathPlanning(Node):
             self.get_logger().warn("Midpoints가 충분하지 않습니다. 최소 2개 필요.")
             return
         
-        # closest_midpoint_idx가 마지막 인덱스인 경우 처리
+        # closest_midpoint_idx가 None이거나 범위를 벗어나는 경우 처리
+        if closest_midpoint_idx is None:
+            closest_midpoint_idx = 0
         if closest_midpoint_idx >= len(midpoints) - 1:
             closest_midpoint_idx = len(midpoints) - 2
         
-        # farthest_midpoint_idx가 첫 번째 인덱스인 경우 처리
-        if farthest_midpoint_idx <= 0:
+        # farthest_midpoint_idx가 None이거나 첫 번째 인덱스인 경우 처리
+        if farthest_midpoint_idx is None or farthest_midpoint_idx <= 0:
             farthest_midpoint_idx = 1
             
         s_x, s_y = midpoints[closest_midpoint_idx]

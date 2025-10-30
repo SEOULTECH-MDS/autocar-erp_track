@@ -63,7 +63,7 @@ class SensorFusion(Node):
         self.cluster_sub = message_filters.Subscriber(self, MarkerArray, '/markers')
 
         self.sync = message_filters.ApproximateTimeSynchronizer(
-            [self.cluster_sub, self.bbox_sub], queue_size=10,
+            [self.cluster_sub, self.bbox_sub], queue_size=20,
             slop=0.5, allow_headerless=True)
         self.sync.registerCallback(self.callback_fusion)
 

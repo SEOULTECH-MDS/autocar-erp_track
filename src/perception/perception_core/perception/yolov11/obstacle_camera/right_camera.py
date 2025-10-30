@@ -20,7 +20,7 @@ class CameraRight(Node):
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         if not self.cap.isOpened():
             self.get_logger().error("Failed to open video file")
-        self.timer = self.create_timer(1.0/30.0, self.timer_callback)  # 30Hz로 프레임 퍼블리시
+        self.timer = self.create_timer(1.0/20.0, self.timer_callback)  # 30Hz로 프레임 퍼블리시
         self.get_logger().info("video_right node started")
 
     def timer_callback(self):
