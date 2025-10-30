@@ -60,7 +60,7 @@ class Control(Node):
         self.control_frequency = 20.0 # HZ
         self.dt = T / N
 
-        self.target_vel = 1.0  # 목표 속도 (m/s)
+        self.target_vel = 1.2  # 목표 속도 (m/s)
         self.steering_angle = 0.0
         self.velocity = 0.0
         
